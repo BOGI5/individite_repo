@@ -9,38 +9,40 @@ def get_key(key):
 
 
 def save_to_file(user, password, website):
-    file = open("example_database.json", "r")
-    if os.path.getsize("example_database.json") > 0:
+    file = open("database.json", "r")
+    if os.path.getsize("database.json") > 0:
         data = file.read()
         data = json.loads(data)
         if (user in data):
             if(website in data[user]):
-                data[user][website]["password"] = password
+                del data[user][website]["password"]
+                new_data = {"password": str(password)}
+                data[user][website].update(new_data)
             else:
-                #add new website
-                print("not done")
+                new_data = {str(website):{"password": str(password)}}
+                data[user].update(new_data)
         else:
-            #add new user
-            print("not done")
+            new_data = {str(user): {str(website):{ "password": str(password)}}}
+            data.update(new_data)
             
     else:
-        data = '{"${user}": {"${website}":{ "password": "${password}"}}}'
+        data = {str(user): {str(website):{ "password": str(password)}}}
 
     file.close()
-    #file = open("database.json", "w")
-    #file.write(json.dumps(data))
-    #file.close()
+    file = open("database.json", "w")
+    file.write(json.dumps(data))
+    file.close()
 
 
 
 def encrypt_password(user, password, website, key):
     key = get_key(key)
     password = password.encode()
-    user = user.encode()
-    website = website.encode()
+    user = user.encode().decode()
+    website = website.encode().decode()
     password = Fernet(key).encrypt(password)
     save_to_file(user, password, website)
     return True
 
 
-encrypt_password("user", "password", "website", "key")
+#encrypt_password("usr", "passd", "wete", "key")
