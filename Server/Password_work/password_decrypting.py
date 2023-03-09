@@ -8,33 +8,34 @@ def get_key(key):
     return hashing.hash_key(key)
 
 
-def read_from_file(user, website):
+def read_from_file(user, website, json_object):
     # get the path to the file
-    path = os.path.dirname(os.path.abspath(__file__))
-    path += r"/database.json"
-    file = open(path, "r")
-    if os.path.getsize(path) > 0:
-        data = file.read()
-        data = json.loads(data)
+    # path = os.path.dirname(os.path.abspath(__file__))
+    # path += r"/database.json"
+    # file = open(path, "r")
+    # if os.path.getsize(path) > 0:
+    if json_object:
+        # data = file.read()
+        data = json.loads(json_object)
         if (user in data):
             if(website in data[user]):
                 password = data[user][website]["password"]
-                file.close()
+                # file.close()
                 return password
             else:
-                file.close()
+                # file.close()
                 return False
         else:
-            file.close()
+            # file.close()
             return False
     else:
-        file.close()
+        # file.close()
         return False
     
 
-def decrypt_password(user, website, key):
+def decrypt_password(user, website, key, json_object):
     key = get_key(key)
-    password = read_from_file(user, website)
+    password = read_from_file(user, website, json_object)
     if password:
         password = password.encode()
         password = Fernet(key).decrypt(password)
