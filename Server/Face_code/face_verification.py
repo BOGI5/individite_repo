@@ -1,4 +1,4 @@
-"""Module used for face verification"""
+"""Face verification"""
 import os
 from deepface.DeepFace import verify
 import tensorflow as tf
