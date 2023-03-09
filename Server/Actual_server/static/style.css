@@ -1,0 +1,159 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #ae7272;
+}
+
+*{
+	font-family: 'Arial';
+	box-sizing: border-box;
+  }
+
+nav {
+	background-color: #303030;
+	display: flex;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+    padding: 0;
+	background-color: #303030;
+}
+  
+nav ul li {
+    float: left;
+	padding: 15px;
+}
+
+nav ul li:hover {
+    background-color: cyan;
+}
+
+nav ul li a {
+    display: inline-block;
+    color: darkcyan;
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;
+	font-size: 20px;
+}
+
+nav ul li a:hover {
+    color: black;
+}
+
+nav ul li img {
+	width: 25px;
+	height: 15px;
+}
+
+.intro {
+	width: 60%;
+	margin: 0 auto;
+ }
+
+.intro > h1 {
+	font-family: 'Trebuchet MS';
+	color: cyan;
+	text-align: center;
+	font-size: 100px;
+}
+
+.intro > p {
+	font-family: 'Trebuchet MS';
+	color: darkcyan;
+	font-size: 25px;
+}
+
+.disclaimer {
+	width: 20%;
+	margin: 0 auto;
+	margin-top: 50px;
+	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: center;
+	display: block;
+	text-align: center;
+}
+
+.disclaimer > h1 {
+	font-size: 50px;
+	color: cyan;
+	text-align: center;
+}
+.disclaimer > img {
+	width: 50px;
+	height: 50px;
+  }
+  
+  .disclaimer > p {
+	font-size: 25px;
+	color: cyan;
+	text-align: center;
+  }
+
+input[type="file"] {
+    display: none;
+}
+
+.camera > button {
+	color: white;
+    height: 75px;
+    width: 300px;
+    background-color: cyan;
+	margin: 0 auto;
+	cursor: pointer;
+	margin-top: 50px;
+	font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	border-style: none;
+}
+
+label {
+    color: white;
+    height: 75px;
+    width: 300px;
+    background-color: cyan;
+    /* position: absolute; */
+    margin: 0 auto;
+	cursor: pointer;
+	margin-top: 50px;
+    /* top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; */
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form label img {
+	height: 45px;
+}
+
+form button {
+	color: white;
+    height: 75px;
+    width: 300px;
+    background-color: cyan;
+	margin: 0 auto;
+	cursor: pointer;
+	margin-top: 50px;
+	font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	border-style: none;
+}
+/* @media screen and (max-width: 1200px) {
+
+}
+  
+@media screen and (max-width: 600px) {
+    
+} */

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ime na proekta / Upload</title>
+        <link rel="icon" type="image/x-icon" href="../static/icon.png">
+        <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/style.css">
+        <script src="../static/webcam.js"></script>
+        
+        <!-- <script src="myscript.js"></script> -->
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/upload">AI thing</a></li>
+                <li><a href="/temp">Temp</a></li>
+                <li>
+                    <a href="/bg/">Language:</a>
+                    <img src="../static/lang-icons/uk.png" alt="Flag of United Kingdom">
+                </li>
+            </ul>
+        </nav>
+        <div class="disclaimer">
+            <h1>Disclaimer</h1>
+            <img src="../static/file-upload.png">
+            <p>edno</p>
+            <img src="../static/file-upload.png">
+            <p>dve</p>
+            <img src="../static/file-upload.png">
+            <p>tri</p>
+            <img src="../static/file-upload.png">
+            <p>a</p>
+        </div>
+        <div class="contentarea">
+            <div class="camera">
+              <video id="video">Video stream not available.</video>
+              <button id="startbutton">Take photo</button>
+              <button type="submit">Upload</button>
+              <form action="/upload" method="POST" enctype="multipart/form-data">
+                <!-- <input type="file" name="file" id="file"> -->
+                <!-- <label for="file">
+                    <img src="../static/file-upload.png" alt="File upload icon">
+                    Choose a file
+                </label> -->
+                <button type="submit">Upload</button>
+            </form>
+            </div>
+            <canvas id="canvas"> </canvas>
+            <div class="output">
+              <img id="photo" alt="The screen capture will appear in this box." />
+            </div>
+        </div>
+        <!-- <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" id="file">
+            <label for="file">
+                <img src="../static/file-upload.png" alt="File upload icon">
+                Choose a file
+            </label>
+            <button type="submit">Upload</button>
+        </form> -->
+    </body>
+</html>
