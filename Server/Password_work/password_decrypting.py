@@ -40,4 +40,6 @@ def decrypt_password(user, website, key):
         return False
 
 
-#print(decrypt_password("usr", "wete", "key"))
+
+if __name__ == "__main__":
+    print(decrypt_password("usr", "wete", "key"))

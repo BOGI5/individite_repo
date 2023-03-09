@@ -45,4 +45,6 @@ def encrypt_password(user, password, website, key):
     return True
 
 
-#encrypt_password("usr", "passd", "wete", "key")
+
+if __name__ == "__main__":
+    encrypt_password("usr", "passd", "wete", "key")
