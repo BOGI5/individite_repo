@@ -1,6 +1,6 @@
 from cryptography.fernet import Fernet
 import os
-import hashing
+from . import hashing
 import json
 
 
@@ -9,9 +9,12 @@ def get_key(key):
 
 
 def save_to_file(user, password, website):
-    file = open("database.json", "r")
+    # get the path to the file
+    path = os.path.dirname(os.path.abspath(__file__))
+    path += r"/database.json"
+    file = open(path, "r")
     # checks if file is empty
-    if os.path.getsize("database.json") > 0:
+    if os.path.getsize(path) > 0:
         data = file.read()
         data = json.loads(data)
         # checks if user is in file
@@ -32,7 +35,7 @@ def save_to_file(user, password, website):
         data = {str(user): {str(website):{ "password": str(password)}}}
 
     file.close()
-    file = open("database.json", "w")
+    file = open(path, "w")
     file.write(json.dumps(data))
     file.close()
 

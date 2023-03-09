@@ -4,7 +4,10 @@ from deepface.DeepFace import verify
 import tensorflow as tf
 
 # Get images
-DIRECTORY = r'Face_images'
+#get path to current directory
+DIRECTORY = os.path.dirname(os.path.abspath(__file__))
+#add the directory where the images are stored
+DIRECTORY += r'/Face_images'
 IMG_1, IMG_2 = os.listdir(DIRECTORY)
 
 

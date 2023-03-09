@@ -1,5 +1,5 @@
 from cryptography.fernet import Fernet
-import hashing
+from . import hashing
 import os
 import json
 
@@ -9,8 +9,11 @@ def get_key(key):
 
 
 def read_from_file(user, website):
-    file = open("database.json", "r")
-    if os.path.getsize("database.json") > 0:
+    # get the path to the file
+    path = os.path.dirname(os.path.abspath(__file__))
+    path += r"/database.json"
+    file = open(path, "r")
+    if os.path.getsize(path) > 0:
         data = file.read()
         data = json.loads(data)
         if (user in data):

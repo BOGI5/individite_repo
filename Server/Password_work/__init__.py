@@ -1,12 +1,13 @@
-from password_encrypting import encrypt_password
-from password_decrypting import decrypt_password
-from hashing import hash_key
-
-def hash(text):
-    return hash_key(text)
+from . import password_encrypting
+from . import password_decrypting
+from . import hashing
 
 def encrypt(user, password, website, key):
-    return encrypt_password(user, password, website, key)
+    return password_encrypting.encrypt_password(user, password, website, key)
+
 
 def decrypt(user, website, key):
-    return decrypt_password(user, website, key)
+    return password_decrypting.decrypt_password(user, website, key)
+
+def hash_key(key):
+    return hashing.hash_key(key)
