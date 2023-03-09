@@ -41,7 +41,7 @@ def encrypt_password(user, password, website, key):
     user = user.encode().decode()
     website = website.encode().decode()
     password = Fernet(key).encrypt(password)
-    save_to_file(user, password, website)
+    save_to_file(user, password.decode(), website)
     return True
 
 
