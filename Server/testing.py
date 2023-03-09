@@ -11,4 +11,5 @@ if str_img:
     file.close()
     file = open("Password_work/database.json", "r")
     print(Password_work.decrypt("sdf", "te", str_img, file.read()))
+    print(Password_work.check_password("sdf", "te", str_img, file.read()))
     file.close()
