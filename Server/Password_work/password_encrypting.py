@@ -10,10 +10,13 @@ def get_key(key):
 
 def save_to_file(user, password, website):
     file = open("database.json", "r")
+    # checks if file is empty
     if os.path.getsize("database.json") > 0:
         data = file.read()
         data = json.loads(data)
+        # checks if user is in file
         if (user in data):
+            # checks if website is in file
             if(website in data[user]):
                 del data[user][website]["password"]
                 new_data = {"password": str(password)}
