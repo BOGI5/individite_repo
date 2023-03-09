@@ -27,6 +27,16 @@ def security_level(security):
         return 'Weak'
     else:
         return 'Very Weak'
+    
+
+def common_used_passwords(password):
+    with open('passwords.txt', 'r') as file:
+        for line in file:
+            if password == line.strip():
+                return True
+        return False
+
+
 
 if __name__ == '__main__':
     password = input('Enter the password:')
