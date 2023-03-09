@@ -16,28 +16,38 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/upload">AI thing</a></li>
                 <li><a href="/temp">Temp</a></li>
+                <!--<li style="width: 20%; display: inline"></li>-->
+                <li id="empty"><a style="justify-content: space-between; width: 1437px"></a></li>
                 <li>
                     <a href="/bg/"><img src="../static/lang-icons/uk.png" alt="Flag of United Kingdom"></a>
                 </li>
             </ul>
         </nav>
         <div class="disclaimer">
-            <h1>Disclaimer</h1>
-            <img src="../static/file-upload.png">
-            <p>edno</p>
-            <img src="../static/file-upload.png">
-            <p>dve</p>
-            <img src="../static/file-upload.png">
-            <p>tri</p>
-            <img src="../static/file-upload.png">
-            <p>a</p>
+            <h1>Facial recognition</h1>
+            <div class="subdisclaimer">
+                <img src="../static/file-upload.png">
+                <p>Avoid wearing hats.</p>
+            </div>
+            <div class="subdisclaimer">
+                <img src="../static/file-upload.png">
+                <p>Avoid wearing glasses.</p>
+            </div>
+            <div class="subdisclaimer">
+                <img src="../static/file-upload.png">
+                <p>Avoid using filters.</p>
+            </div>
+            <div class="subdisclaimer">
+                <img src="../static/file-upload.png">
+                <p>Ensure there is enough lighting.</p>
+            </div>
+
         </div>
-        <div class="contentarea">
             <div class="camera">
-              <video id="video">Video stream not available.</video>
-              <button id="startbutton">Take photo</button>
-              <button type="submit">Upload</button>
-              <form action="/upload" method="POST" enctype="multipart/form-data">
+                <video id="video">Video stream not available.</video>
+                <button id="startbutton">Take photo</button>
+                <button type="submit">Upload</button>
+                <form action="/upload" method="POST" enctype="multipart/form-data">
                 <!-- <input type="file" name="file" id="file"> -->
                 <!-- <label for="file">
                     <img src="../static/file-upload.png" alt="File upload icon">
@@ -50,7 +60,6 @@
             <div class="output">
               <img id="photo" alt="The screen capture will appear in this box." />
             </div>
-        </div>
         <!-- <form action="/upload" method="POST" enctype="multipart/form-data">
             <input type="file" name="file" id="file">
             <label for="file">

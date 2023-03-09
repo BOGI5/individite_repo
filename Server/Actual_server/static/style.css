@@ -31,6 +31,12 @@ nav ul li:hover {
     background-color: cyan;
 }
 
+/*nav ul {
+	width: 10%;
+	height: 83px;
+	display: inline-block;
+}*/
+
 nav ul li a {
     display: inline-block;
     color: darkcyan;
@@ -49,6 +55,9 @@ nav ul li img {
 	height: 15px;
 }
 
+#empty:hover {
+	background-color: rgba(0, 0, 0, 0);
+}
 .intro {
 	width: 60%;
 	margin: 0 auto;
@@ -68,7 +77,37 @@ nav ul li img {
 }
 
 .disclaimer {
-	width: 20%;
+	width: 50%;
+	margin: 0 auto;
+	margin-top: 50px;
+	display: block;
+}
+
+.disclaimer > h1 {
+	font-size: 50px;
+	color: cyan;
+	text-align: center;
+}
+
+.subdisclaimer {
+	height: 150px;
+	display: flex;
+
+}
+
+.subdisclaimer > img{
+	width: 75px;
+	height: 75px;
+	margin: 30px;
+}
+
+.subdisclaimer > p{
+	font-size: 37px;
+	color: white;
+}
+
+.camera {
+	width: 50%;
 	margin: 0 auto;
 	margin-top: 50px;
 	display: flex;
@@ -79,22 +118,9 @@ nav ul li img {
 	text-align: center;
 }
 
-.disclaimer > h1 {
-	font-size: 50px;
-	color: cyan;
-	text-align: center;
+#video {
+	display: flex;
 }
-.disclaimer > img {
-	width: 50px;
-	height: 50px;
-  }
-  
-  .disclaimer > p {
-	font-size: 25px;
-	color: cyan;
-	text-align: center;
-  }
-
 input[type="file"] {
     display: none;
 }
