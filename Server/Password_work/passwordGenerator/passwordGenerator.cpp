@@ -11,16 +11,16 @@ string* generatePassword(size_t size, bool difficulty)
     string* password = new string;
     for(size_t i = 0; i < size; i++)
     {
-        int j;
+        int symbolCode;
         bool pass = false;
         while(!pass){
             random_device rd; // obtain a random number from hardware
             mt19937 gen(rd()); // seed the generator
             uniform_int_distribution<> distr(33, 126);
-            j = distr(gen);
-            if(inRange(j, difficulty))pass = true;
+            symbolCode = distr(gen);
+            if(inRange(symbolCode, difficulty))pass = true;
         }
-        password[i] = j;
+        password[i] = symbolCode;
     }
     return password;
 }
