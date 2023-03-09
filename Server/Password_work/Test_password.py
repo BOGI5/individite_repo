@@ -1,4 +1,5 @@
 import re
+import os
 
 def check_password(password):
     security = 5
@@ -27,6 +28,18 @@ def security_level(security):
         return 'Weak'
     else:
         return 'Very Weak'
+    
+
+def common_used_passwords(password):
+    path = os.path.dirname(os.path.abspath(__file__))
+    path += '/passwords.txt'
+    with open(path , 'r') as file:
+        for line in file:
+            if password == line.strip():
+                return True
+        return False
+
+
 
 if __name__ == '__main__':
     password = input('Enter the password:')
