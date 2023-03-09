@@ -41,25 +41,24 @@
                 <img src="../static/file-upload.png">
                 <p>Ensure there is enough lighting.</p>
             </div>
-
         </div>
-            <div class="camera">
+
+        <div class="camera">
                 <video id="video">Video stream not available.</video>
                 <button id="startbutton">Take photo</button>
-                <button type="submit">Upload</button>
+                <div class="output">
+                    <!-- <img id="photo" alt="The screen capture will appear in this box." /> -->
+                    <canvas id="canvas"> </canvas>
+                </div>
                 <form action="/upload" method="POST" enctype="multipart/form-data">
                 <!-- <input type="file" name="file" id="file"> -->
                 <!-- <label for="file">
                     <img src="../static/file-upload.png" alt="File upload icon">
                     Choose a file
                 </label> -->
-                <button type="submit">Upload</button>
-            </form>
-            </div>
-            <canvas id="canvas"> </canvas>
-            <div class="output">
-              <img id="photo" alt="The screen capture will appear in this box." />
-            </div>
+                    <button type="submit">Upload</button>
+                </form>
+        </div>
         <!-- <form action="/upload" method="POST" enctype="multipart/form-data">
             <input type="file" name="file" id="file">
             <label for="file">

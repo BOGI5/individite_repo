@@ -120,6 +120,9 @@ nav ul li img {
 
 #video {
 	display: flex;
+	width: 500px;
+	height: 300px;
+
 }
 input[type="file"] {
     display: none;
