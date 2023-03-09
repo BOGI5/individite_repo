@@ -110,11 +110,10 @@ nav ul li img {
 	width: 50%;
 	margin: 0 auto;
 	margin-top: 50px;
-	display: flex;
   	flex-direction: column;
   	align-items: center;
   	justify-content: center;
-	display: block;
+	display: flex;
 	text-align: center;
 }
 
@@ -122,10 +121,7 @@ nav ul li img {
 	display: flex;
 	width: 500px;
 	height: 300px;
-
-}
-input[type="file"] {
-    display: none;
+	background-color: black;
 }
 
 .camera > button {
@@ -164,6 +160,10 @@ label {
 
 form label img {
 	height: 45px;
+}
+
+input[type="file"] {
+    display: none;
 }
 
 form button {

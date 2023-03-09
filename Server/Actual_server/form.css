@@ -1,0 +1,160 @@
+body{background-image: url("Background.jpg");}
+#Form{
+    position: absolute;
+    top: 20%;
+    left: 12%;
+    background-color: rgba(32, 44, 44, 1);
+    font-size: 2cm;
+    border-radius: 7cm;
+    width: 30cm;
+    height: 13cm;
+    text-align: center;
+    display: block;
+    transition: 0.8s;
+}
+.FormInput{
+    transition: 0.8s;
+    border: 2px solid black;
+    padding: 13px 13px;
+    color: rgb(230, 227, 227);
+    background-color: rgba(32, 44, 44, 1);
+    font-family: monospace;
+    font-size: 15pt;
+    border-radius: 1cm;
+}
+.FormInput:hover{
+    background-color: rgb(189, 188, 188);
+    color: rgb(46, 45, 45);
+    font-family: monospace;
+    border-radius: 1cm;
+    cursor: pointer;
+}
+.FormInput._error{
+    box-shadow: 0 0 15px red;
+}
+#check{
+    width: 8.5cm;
+    position: absolute;
+    top: 83%;
+    right: 20%;
+    display: block;
+}
+#submit{
+    width: 10cm;
+    display: none;
+    position: absolute;
+    left: 72%;
+    top: 27%;
+}
+#reset{
+    width: 8.5cm;
+    position: absolute;
+    left: 20%;
+    top: 83%;
+}
+#Email{
+    width: 12.5cm;
+}
+#Time{
+    width: 4cm;
+}
+#Date{
+    width: 7cm;
+}
+#Adress{
+    width: 10cm;
+}
+#Name{
+    width: 7.5cm;
+    margin: 15px;
+}
+#Copyright{
+    background-color: rgba(100, 100, 100, 0.397);
+    height: 2cm;
+    left: 0;
+    right: 0;
+    top: 62cm;
+    position: absolute;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15pt;
+    text-align: center;
+    
+}
+#DateTime{
+    font-family: monospace;
+    font-size: 20pt;
+    color: whitesmoke;
+}
+#alert{
+    font-size: 15px;
+    color: red;
+    display: none;
+    font-family: monospace;
+    text-shadow: 0 0 15px red;
+}
+#results{
+    position: relative;
+    top: -15%;
+}
+#Results{
+    position: absolute;
+    top: 15%;
+    left: 12%;
+    background-color: rgba(32, 44, 44, 1);
+    font-size: 1.6cm;
+    border: 2px solid white;
+    width: 30cm;
+    text-align: center;
+    color: whitesmoke;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h3{
+    position: relative;
+    top: -11%;
+}
+#send{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50px;
+    color: whitesmoke;
+    display: none;
+    position: absolute;
+    top: 2cm;
+    left: 6.5cm;
+}
+#Next{
+    position: fixed;
+    bottom: 1cm;
+    left: 15cm;
+    width: 10cm;
+    height: 2cm;
+    background-color: rgba(32, 44, 44, 1);
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: whitesmoke;
+    border-radius: 1cm;
+    border-width: 0;
+    transition: 0.8s;
+}
+#Next:hover{
+    cursor: pointer;
+    background-color: rgb(189, 188, 188);
+    color: rgb(46, 45, 45);
+}
+.food{
+    border-radius: 1cm; 
+    width: 2cm;
+    height: 0.5cm;
+    border-width: 0;
+    font-size: 20px;
+    text-align: center;
+}
+
+#video {
+    display: flex;
+    width: 500px;
+    height: 300px;
+    background-color: black;
+    border-radius: 7cm;
+    align-items: center;
+}

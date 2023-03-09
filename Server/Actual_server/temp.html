@@ -1,0 +1,47 @@
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>Delivery details</title>
+    <script src="dynamic_menu.js"></script>
+    <script src="form.js"></script>
+    <link rel="stylesheet" href="dynamic_menu.css">
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="menu.css">
+    </head>
+    <body>
+    <div>
+        <form action="results.html" id="Form" method="GET">
+            <input type="text" name="Name" placeholder="Input your name" id="Name" class="FormInput _req">
+            <center>
+                <video id="video">Video stream not available.</video>
+                <img style="display: none">
+            </center>
+            <input type="submit" id="submit" value="Submit" class="FormInput">
+            <input type="reset" id="reset" value="Reset" class="FormInput" onclick="fullReset()">
+            <button onclick="formCheck()" class="FormInput" id="check">Take photo</button>
+        <p id="send">All input data are correct.<br>You can continue.<br></p>
+        </form>
+    </div>
+    <button onclick="Form()" id="Next">Next</button>
+    <div id="menu_line">
+        <button onclick="Menu()" id="MenuImage">
+            <img src="Menu.png" style="height: 2cm; width: 2cm;">
+        </button>
+        <p id="Title">Delivery details:</p>
+    </div>
+    <div id="MainMenu">
+        <div class="ButtonsPosition">
+            <a href="index.html"><button class="button"><strong>Home</strong></button></a>
+        </div>
+        <div class="ButtonsPosition">
+            <a href="menu.html"><button class="button"><strong>Menu</strong></button></a>
+        </div>
+        <div class="ButtonsPosition">
+            <a href="about_us.html"><button class="button"><strong>About us</strong></button></a>
+        </div>
+    </div>
+    <pre id="Copyright">
+        This site was made for school project. This is not a real restaurant!
+    </pre>
+    </body>
+</html>
