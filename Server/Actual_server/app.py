@@ -28,13 +28,7 @@ def temp():
     if request.method == "POST":
         takendataURL = request.form.get("dataURL")
         username = request.form.get("Name")
-        # find path of previous folder
-        path = os.path.dirname(os.path.abspath(__file__))
-        path += r"/Face_images" + "/" + str(username) + ".txt"
-
-        with open(path, 'w') as file:
-            file.write(takendataURL)
-        get_image()
+        get_image(takendataURL, username)
 
     return render_template('temp.html')
 
