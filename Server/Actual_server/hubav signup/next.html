@@ -1,0 +1,42 @@
+<html>
+    <head>
+    <meta charset="UTF-8">
+        <title>Passwords</title>
+        <script src="dynamic_menu.js"></script>
+        <script src="form.js"></script>
+        <script src="static/webcam.js"></script>
+        <link rel="stylesheet" href="dynamic_menu.css">
+        <link rel="stylesheet" href="form.css">
+        <link rel="stylesheet" href="menu.css">
+    </head>
+    <body>
+        <div id="menu_line">
+            <button onclick="Menu()" id="MenuImage">
+                <img src="Menu.png" style="height: 2cm; width: 2cm;">
+            </button>
+            <p id="Title">Passwords</p>
+        </div>
+
+        <div id="Form">
+            <input type="add_pass" id="add_pass" value="+" class="FormInput">
+            <input type="text" name="site_url" placeholder="Website URL" id="site_url" class="FormInput _req">
+            <input type="password" name="site_pass" placeholder="Website password" id="site_pass" class="FormInput _req">
+            <input type="save_sinfo" id="save_sinfo" value="Save" class="FormInput">
+            <!-- <input type="submit" id="submit" value="Sign up" class="FormInput">
+            <input type="reset" id="reset" value="Reset" class="FormInput" onclick="fullReset()"> -->
+            <!-- <button class="FormInput" id="takePhoto" onclick="takephoto()">Take photo</button> -->
+        <!-- <p id="send">All input data are correct.<br>You can continue.<br></p> -->
+        </div>
+    
+    <div id="MainMenu">
+        <div class="ButtonsPosition">
+            <a href="index.html"><button class="button"><strong>Home</strong></button></a>
+        </div>
+        <div class="ButtonsPosition">
+            <a href="menu.html"><button class="button"><strong>Menu</strong></button></a>
+        </div>
+        <div class="ButtonsPosition">
+            <a href="about_us.html"><button class="button"><strong>About us</strong></button></a>
+        </div>
+    </body>
+</html>
