@@ -1,0 +1,51 @@
+<html>
+    <head>
+    <meta charset="UTF-8">
+        <title>Sign up</title>
+        <script src="dynamic_menu.js"></script>
+        <script src="form.js"></script>
+        <script src="static/webcam.js"></script>
+        <link rel="stylesheet" href="dynamic_menu.css">
+        <link rel="stylesheet" href="form.css">
+        <link rel="stylesheet" href="menu.css">
+    </head>
+    <body>
+        <div id="menu_line">
+            <button onclick="Menu()" id="MenuImage">
+                <img src="Menu.png" style="height: 2cm; width: 2cm;">
+            </button>
+            <p id="Title">Sign up</p>
+        </div>
+
+        <div id="Form">
+            <center>
+                <video id="video">Video stream not available.</video>
+                <center>
+                    <canvas id="takenpic" style="display: none" width="250" height="150"></canvas>
+                    <canvas id="highres" style="display: none" width="400" height="300"></canvas>
+                </center>
+            </center>
+            <input type="text" name="Name" placeholder="Name" id="Name" class="FormInput _req">
+            <input type="password" name="Password" placeholder="Password" id="Password" class="FormInput _req">
+            <input type="submit" id="submit" value="Submit" class="FormInput">
+            <input type="reset" id="reset" value="Reset" class="FormInput" onclick="fullReset()">
+            <button class="FormInput" id="takePhoto" onclick="takephoto()">Take photo</button>
+        <p id="send">All input data are correct.<br>You can continue.<br></p>
+        </div>
+    
+    <div id="MainMenu">
+        <div class="ButtonsPosition">
+            <a href="index.html"><button class="button"><strong>Home</strong></button></a>
+        </div>
+        <div class="ButtonsPosition">
+            <a href="menu.html"><button class="button"><strong>Menu</strong></button></a>
+        </div>
+        <div class="ButtonsPosition">
+            <a href="about_us.html"><button class="button"><strong>About us</strong></button></a>
+        </div>
+    
+    <!-- <pre id="Copyright">
+        This site was made for school project. This is not a real restaurant!
+    </pre> -->
+    </body>
+</html>
