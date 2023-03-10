@@ -59,6 +59,8 @@ function fullReset(){
     //document.getElementById('check').style.top="72%";
     document.getElementById('video').style.display ="block";
     document.getElementById('takenpic').style.display="none";
+    document.getElementById('Name').value = "";
+    document.getElementById('Password').value = "";
 }
 
 function Form(){

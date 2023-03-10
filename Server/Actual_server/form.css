@@ -58,6 +58,12 @@ body{background-image: url("Background.jpg");}
     margin: 15px;
     margin-bottom: 5px;
 }
+
+#Password{
+    width: 7.5cm;
+    margin: 15px;
+    margin-bottom: 5px;
+}
 #Copyright{
     background-color: rgba(100, 100, 100, 0.397);
     height: 2cm;
