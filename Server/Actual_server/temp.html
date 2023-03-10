@@ -11,17 +11,17 @@
     </head>
     <body>
     <div>
-        <form action="" id="Form" method="GET">
+        <div id="Form">
             <input type="text" name="Name" placeholder="Input your name" id="Name" class="FormInput _req">
             <center>
                 <video id="video">Video stream not available.</video>
-                <img style="display: none">
+            <center><canvas id="takenpic" style="display: none" width="250" height="150"></canvas></center>
             </center>
             <input type="submit" id="submit" value="Submit" class="FormInput">
             <input type="reset" id="reset" value="Reset" class="FormInput" onclick="fullReset()">
-            <button class="FormInput" id="check">Take photo</button>
+            <button class="FormInput" id="takePhoto" onclick="takephoto()">Take photo</button>
         <p id="send">All input data are correct.<br>You can continue.<br></p>
-        </form>
+        </div>
     </div>
     <button onclick="Form()" id="Next">Next</button>
     <div id="menu_line">
