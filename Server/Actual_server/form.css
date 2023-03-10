@@ -56,6 +56,7 @@ body{background-image: url("Background.jpg");}
 #Name{
     width: 7.5cm;
     margin: 15px;
+    margin-bottom: 5px;
 }
 #Copyright{
     background-color: rgba(100, 100, 100, 0.397);
