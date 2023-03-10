@@ -28,7 +28,9 @@ def temp():
     if request.method == "POST":
         takendataURL = request.form.get("dataURL")
         username = request.form.get("Name")
-        path = rf'/home/bogi5/Github/individite_repo/Server/Face_image_base64/{username}.txt'
+        # find path of previous folder
+        path = os.path.dirname(os.path.abspath(__file__))
+        path += r"/Face_images" + "/" + str(username) + ".txt"
 
         with open(path, 'w') as file:
             file.write(takendataURL)

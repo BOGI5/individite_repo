@@ -11,7 +11,8 @@ def get_image():
     :img(str): Image type i.e. jpeg, jpg, png etc.
     """
     # Get name and image files path
-    img_path = r'/home/bogi5/Github/individite_repo/Server/Face_image_base64'
+    img_path = os.path.dirname(os.path.abspath(__file__))
+    img_path += r'/Face_images'
     name = os.listdir(img_path)[0]
     name = name.split('.')[0]
     img = os.path.join(img_path, name + '.txt')
@@ -32,6 +33,6 @@ def get_image():
     text = base64.decodebytes(text)
 
     # Crete image
-    new_img = rf'Face_images/{name}.{image}'
+    new_img = os.path.join(img_path, name + '.' + image)
     with open(new_img, 'wb') as file:
         file.write(text)
