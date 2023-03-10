@@ -57,6 +57,8 @@ function fullReset(){
     document.getElementById('alert').style.display="none";
     document.getElementById('Form').style.height="12cm";
     document.getElementById('check').style.top="72%";
+    document.getElementById('video').style.display ="block";
+    document.getElementById('takenpic').style.display="none";
 }
 
 function Form(){
@@ -65,6 +67,11 @@ function Form(){
     document.getElementById('Form').style.display="block";
     document.getElementById('check').style.display="block"; 
     document.getElementById('Copyright').style.top="16.5cm";
+}
+
+
+function empty() {
+
 }
 
 function takephoto(){
