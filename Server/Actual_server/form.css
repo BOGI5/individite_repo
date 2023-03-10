@@ -32,7 +32,7 @@ body{background-image: url("Background.jpg");}
 .FormInput._error{
     box-shadow: 0 0 15px red;
 }
-#check{
+#takePhoto{
     width: 8.5cm;
     position: absolute;
     top: 83%;
@@ -137,7 +137,17 @@ h3{
 
 #video {
     display: flex;
-    width: 500px;
+    width: 400px;
+    height: 300px;
+    background-color: black;
+    border-radius: 7cm;
+    align-items: center;
+}
+
+
+#takenpic{
+    display: flex;
+    width: 400px;
     height: 300px;
     background-color: black;
     border-radius: 7cm;
