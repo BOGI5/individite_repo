@@ -2,17 +2,17 @@
     <head>
     <meta charset="UTF-8">
         <title>Log in</title>
-        <script src="static/dynamic_menu.js"></script>
-        <script src="static/form.js"></script>
-        <script src="static/webcam.js"></script>
-        <link rel="stylesheet" href="static/dynamic_menu.css">
-        <link rel="stylesheet" href="static/form.css">
-        <link rel="stylesheet" href="static/menu.css">
+        <script src="../static/dynamic_menu.js"></script>
+        <script src="../static/form.js"></script>
+        <script src="../static/webcam.js"></script>
+        <link rel="stylesheet" href="../static/dynamic_menu.css">
+        <link rel="stylesheet" href="../static/form.css">
+        <link rel="stylesheet" href="../static/menu.css">
     </head>
     <body>
         <div id="menu_line">
             <button onclick="Menu()" id="MenuImage">
-                <img src="static/Menu.png" style="height: 2cm; width: 2cm;">
+                <img src="../static/Menu.png" style="height: 2cm; width: 2cm;">
             </button>
             <p id="Title">Log in</p>
         </div>
@@ -21,7 +21,8 @@
                 <p style="position:absolute; top: 70%; left: 62.5%; width:1000px; color: rgb(157, 255, 0);">&#160;&#160;&#160;&#160;&#160;Avoid wearing hats.&#160; Avoid wearing glasses.&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<br>Avoid using filters. &#160;  Ensure there is enough lighting.<br><br><br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Smile for verification!</p>
             </div>
         </div>
-        <div id="Form">
+        <div>
+            <form action="{{ url_for('login')}}" method="post" id="Form">
             <center>
                 <video id="video">Video stream not available.</video>
                 <center>
@@ -29,12 +30,14 @@
                     <canvas id="highres" style="display: none" width="400" height="300"></canvas>
                 </center>
             </center>
+            <input type="text" name="dataURL" id="dataURLfield">
             <input type="text" name="Name" placeholder="Name" id="Name" class="FormInput _req">
             <input type="password" name="Password" placeholder="Password" id="Password" class="FormInput _req">
             <input type="submit" id="submit" value="Log in" class="FormInput">
             <input type="reset" id="reset" value="Reset" class="FormInput" onclick="fullReset()">
             <button class="FormInput" id="takePhoto" onclick="takephoto()">Take photo</button>
         <p id="send">All input data are correct.<br>You can continue.<br></p>
+                </form>
         </div>
     
     <div id="MainMenu">
