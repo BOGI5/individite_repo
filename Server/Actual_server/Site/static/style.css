@@ -1,0 +1,189 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #112d32;
+}
+/*#D83F87 - #2A1B3D - #44318D - #E98074 - #A4B3B6*/
+
+*{
+	font-family: 'Arial';
+	box-sizing: border-box;
+  }
+
+nav {
+	background-color: #321611;
+	display: flex;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+    padding: 0;
+	background-color: #321611;
+}
+  
+nav ul li {
+    float: left;
+	padding: 15px;
+}
+
+nav ul li:hover {
+    background-color: cyan;
+}
+
+/*nav ul {
+	width: 10%;
+	height: 83px;
+	display: inline-block;
+}*/
+
+nav ul li a {
+    display: inline-block;
+    color: darkcyan;
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;
+	font-size: 20px;
+}
+
+nav ul li a:hover {
+    color: black;
+}
+
+nav ul li img {
+	width: 25px;
+	height: 15px;
+}
+
+#empty:hover {
+	background-color: rgba(0, 0, 0, 0);
+}
+.intro {
+	width: 60%;
+	margin: 0 auto;
+ }
+
+.intro > h1 {
+	font-family: 'Trebuchet MS';
+	color: cyan;
+	text-align: center;
+	font-size: 100px;
+}
+
+.intro > p {
+	font-family: 'Trebuchet MS';
+	color: darkcyan;
+	font-size: 25px;
+}
+
+.disclaimer {
+	width: 50%;
+	margin: 0 auto;
+	margin-top: 50px;
+	display: block;
+}
+
+.disclaimer > h1 {
+	font-size: 50px;
+	color: cyan;
+	text-align: center;
+}
+
+.subdisclaimer {
+	height: 150px;
+	display: flex;
+
+}
+
+.subdisclaimer > img{
+	width: 75px;
+	height: 75px;
+	margin: 30px;
+}
+
+.subdisclaimer > p{
+	font-size: 37px;
+	color: white;
+}
+
+.camera {
+	width: 50%;
+	margin: 0 auto;
+	margin-top: 50px;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: center;
+	display: flex;
+	text-align: center;
+}
+
+#video {
+	display: flex;
+	width: 500px;
+	height: 300px;
+	background-color: black;
+}
+
+.camera > button {
+	color: white;
+    height: 75px;
+    width: 300px;
+    background-color: cyan;
+	margin: 0 auto;
+	cursor: pointer;
+	margin-top: 50px;
+	font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	border-style: none;
+}
+
+label {
+    color: white;
+    height: 75px;
+    width: 300px;
+    background-color: cyan;
+    /* position: absolute; */
+    margin: 0 auto;
+	cursor: pointer;
+	margin-top: 50px;
+    /* top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; */
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form label img {
+	height: 45px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+form button {
+	color: white;
+    height: 75px;
+    width: 300px;
+    background-color: cyan;
+	margin: 0 auto;
+	cursor: pointer;
+	margin-top: 50px;
+	font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	border-style: none;
+}
+/* @media screen and (max-width: 1200px) {
+
+}
+  
+@media screen and (max-width: 600px) {
+    
+} */
