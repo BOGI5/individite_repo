@@ -12,21 +12,17 @@ def get_key(key):
 def read_from_file(user, website, username):
     # get the path to the file
     path = os.path.dirname(os.path.abspath(__file__))
-    path += r"/database.json"
+    path += r"/Database/new_database/" + str(username) + ".json"
     file = open(path, "r")
     if os.path.getsize(path) > 0:
         data = file.read()
         data = json.loads(data)
-        if (username in data):
         # if json_object:
-            if (user in data[username]):
-                if(website in data[username][user]):
-                    password = data[username][user][website]["password"]
-                    file.close()
-                    return password
-                else:
-                    file.close()
-                    return False
+        if (user in data):
+            if(website in data[user]):
+                password = data[user][website]["password"]
+                file.close()
+                return password
             else:
                 file.close()
                 return False
