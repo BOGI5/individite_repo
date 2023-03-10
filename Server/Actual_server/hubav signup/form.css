@@ -4,8 +4,8 @@ body{
 }
 #Form{
     position: absolute;
-    top: 20%;
-    left: 19%;
+    top: 40%;
+    left: 20%;
     font-size: 2cm;
     border-radius: 5px;
     width: 30cm;
@@ -38,21 +38,26 @@ body{
 
 #Name{
     width: 275px;
+    height: 60px;
     position: absolute;
     left: 25%;
     top: 64%;
+    cursor: text;
 }
 
 #Password{
     width: 275px;
+    height: 60px;
     position: absolute;
     right: 25%;
     top: 64%;
+    cursor: text;
 }
 
 
 #takePhoto{
     width: 275px;
+    height: 60px;
     position: absolute;
     left: 25%;
     top: 81%;
@@ -61,6 +66,7 @@ body{
 
 #submit{
     width: 275px;
+    height: 60px;
     position: absolute;
     left: 25%;
     top: 81%;
@@ -69,9 +75,42 @@ body{
 
 #reset{
     width: 275px;
+    height: 60px;
     position: absolute;
     right: 25%;
     top: 81%;
+}
+
+#add_pass {
+    width: 47.5px;
+    height: 60px;
+    position: absolute;
+    left: 10%;
+    top: 15%; /*trqbva da se uvelichava s 15 procenta za vsqka nova dobavena redichka*/
+}
+
+#site_url {
+    width: 275px;
+    height: 60px;
+    position: absolute;
+    left: 10%;
+    top: 0%; /*trqbva da se uvelichava s 15 procenta za vsqka nova dobavena redichka*/
+}
+
+#site_pass {
+    width: 275px;
+    height: 60px;
+    position: absolute;
+    left: 35%;
+    top: 0%; /*trqbva da se uvelichava s 15 procenta za vsqka nova dobavena redichka*/
+}
+
+#save_sinfo{
+    width: 275px;
+    height: 60px;
+    position: absolute;
+    left: 60%;
+    top: 0%; /*trqbva da se uvelichava s 15 procenta za vsqka nova dobavena redichka*/
 }
 
 #alert{
@@ -156,4 +195,38 @@ h3{
     background-color: black;
     border-radius: 75px;
     align-items: center;
+}
+
+
+
+
+.disclaimer {
+    position: absolute;
+	width: 50%;
+	margin: 0 auto;
+	margin-top: 50px;
+	display: block;
+}
+
+.disclaimer > h1 {
+	font-size: 50px;
+	color: cyan;
+	text-align: center;
+}
+
+.subdisclaimer {
+	height: 150px;
+	display: flex;
+
+}
+
+.subdisclaimer > img{
+	width: 75px;
+	height: 75px;
+	margin: 30px;
+}
+
+.subdisclaimer > p{
+	font-size: 37px;
+	color: white;
 }
