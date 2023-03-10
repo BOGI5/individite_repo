@@ -1,0 +1,65 @@
+
+* {
+    margin: 0;
+    
+        
+    
+}
+#MenuImage{
+    transition: 0.8s;
+    background-color: rgba(32, 44, 44, 1);
+    border: none;
+}
+#MenuImage:hover{
+    background-color: rgb(189, 188, 188);
+    cursor: pointer;
+}
+#menu_line {
+    background-color: rgba(32, 44, 44, 1);
+    top: 0;
+    width: 100%;
+    position: fixed;
+    height: 75px;
+    display: flex;
+    
+}
+
+#Title{
+    position: fixed;
+    top: 2%;
+    left: 44.5%;
+    font-family: monospace;
+    font-size: 25pt;
+    color: whitesmoke;
+}
+
+#MainMenu{
+    margin-top: 2cm;
+    position: fixed;
+    left: 0;
+    background-color: rgba(32, 44, 44, 1);
+    font-size: 50px;
+    text-align: center;
+    text-align: left;
+    width: 5cm;
+    height: 100%;
+    display: none;
+}
+.ButtonsPosition{
+    text-align: center;
+}
+.button{
+    transition: 0.8s;
+    border: 2px solid black;
+    padding: 10px 50px;
+    color: rgb(230, 227, 227);
+    background-color: rgba(32, 44, 44, 1);
+    font-family: monospace;
+    
+}
+.button:hover{
+    background-color: rgb(189, 188, 188);
+    color: rgb(46, 45, 45);
+    font-family: monospace;
+    cursor: pointer;
+}
