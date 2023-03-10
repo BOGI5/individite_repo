@@ -54,7 +54,7 @@ function fullReset(){
         const input = formReq[index];
         formRemoveError(input);
     }
-    document.getElementById('alert').style.display="none";
+    /*document.getElementById('alert').style.display="none";*/
     document.getElementById('Form').style.height="12cm";
     document.getElementById('check').style.top="72%";
     document.getElementById('video').style.display ="block";
