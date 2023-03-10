@@ -72,7 +72,7 @@
                 <p style="position:absolute; top: 70%; left: 62.5%; width:1000px; color: rgb(157, 255, 0);">&#160;&#160;&#160;&#160;&#160;Avoid wearing hats.&#160; Avoid wearing glasses.&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<br>Avoid using filters. &#160;  Ensure there is enough lighting.</p>
             </div>
         </div>
-        <form action="{{ url_for("signup")}}" method="post" id="Form">
+        <form action="{{ url_for('signup')}}" method="post" id="Form">
             <input type="text" name="dataURL" style="display:none" id="dataURLfield">
             <input type="text" name="Name" placeholder="Input your name" id="Name" class="FormInput _req">
             <input type="password" name="Password" placeholder="Input your password" id="Password" class="FormInput _req">

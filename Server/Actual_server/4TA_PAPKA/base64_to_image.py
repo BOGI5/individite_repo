@@ -3,7 +3,7 @@ import base64
 import os
 
 
-def get_image(text, name):
+def get_image(text, name, directory):
     """Function which decode base64 data and create image.
     :name(str): Name of the user
     :data(str): Two halves of the base64 data
@@ -24,6 +24,6 @@ def get_image(text, name):
 
     # Crete image
     new_img = os.path.dirname(os.path.abspath(__file__))
-    new_img += r"/Face_images/" + str(name) + "." + image
+    new_img += directory + str(name) + "." + image
     with open(new_img, 'wb') as file:
         file.write(text)

@@ -1,5 +1,4 @@
 from cryptography.fernet import Fernet
-from jwt import InvalidTokenError
 from . import hashing
 import os
 import json
