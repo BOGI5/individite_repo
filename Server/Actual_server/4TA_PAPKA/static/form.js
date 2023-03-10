@@ -109,7 +109,8 @@ function takephoto(){
 
 }
 
-// wait for everything to be loaded
+// wait for everything on the window to be loaded
+
 window.addEventListener('load', function () {
     document.getElementById('Name').addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
