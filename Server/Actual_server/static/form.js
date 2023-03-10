@@ -99,6 +99,8 @@ function takephoto(){
         document.getElementById('takenpic').style.display="block";
         document.getElementById('takePhoto').style.display="none";
         document.getElementById('submit').style.display="block";
+        document.getElementById('Name').readOnly = true;
+        document.getElementById('Password').readOnly = true;
 
         document.getElementById("dataURLfield").value = dataURL;
     }
