@@ -63,6 +63,8 @@ function fullReset(){
     document.getElementById('Password').value = "";
     document.getElementById('takePhoto').style.display="block";
     document.getElementById('submit').style.display="none";
+    document.getElementById('Name').readOnly = false;
+        document.getElementById('Password').readOnly = false;
 }
 
 function Form(){
