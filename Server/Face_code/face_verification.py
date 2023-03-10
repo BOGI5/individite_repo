@@ -35,14 +35,12 @@ def check_image():
 
     # If the faces are the same person
     # return unique key that is string representation of the image NumPy array
-    if result:
-        key = keras.preprocessing.image.load_img(path_img_1)
-        key = keras.preprocessing.image.img_to_array(key, dtype='float32')
-        return str(key)
+    key = keras.preprocessing.image.load_img(path_img_1)
+    key = keras.preprocessing.image.img_to_array(key, dtype='float32')
 
-    # Delete the images
+    # Delete the files
     os.remove(path_img_1)
-    os.remove(path_img_2)
+    os.remove(path_name)
 
-    # If the faces are not the same person return False
-    return False
+    # If the faces are not the same person return False otherwise key
+    return str(key) if result else False
