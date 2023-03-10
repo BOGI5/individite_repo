@@ -66,3 +66,11 @@ function Form(){
     document.getElementById('check').style.display="block"; 
     document.getElementById('Copyright').style.top="16.5cm";
 }
+
+function takephoto(){
+    var canvas = document.getElementById('takenpic');
+    const context=canvas.getContext('2d');
+    context.drawImage(video , 0, 0, 250, 150);
+    document.getElementById('video').style.display="none";
+    document.getElementById('takenpic').style.display="block";
+}
