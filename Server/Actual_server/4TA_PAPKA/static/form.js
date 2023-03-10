@@ -1,3 +1,9 @@
+var passwords = JSON.parse("{{passwords|tojson|safe}}");
+console.log(passwords);
+
+
+
+
 function formCheck(){
     let error = formValidate();
 
@@ -44,9 +50,6 @@ function formRemoveError(input){
     input.parentElement.classList.remove('_error');
     input.classList.remove('_error');
 }
-function emailTest(input){
-    return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
-};
 
 function fullReset(){
     let formReq = document.querySelectorAll('._req');
@@ -182,7 +185,6 @@ function takephoto(){
 
 }
 
-// wait for everything on the window to be loaded
 
 window.addEventListener('load', function () {
     document.getElementById('Name').addEventListener('keypress', function (e) {
