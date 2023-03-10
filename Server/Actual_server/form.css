@@ -44,7 +44,7 @@ body{background-image: url("Background.jpg");}
     display: none;
     position: absolute;
     left: 72%;
-    top: 27%;
+    top: 50%;
 }
 #reset{
     width: 8.5cm;
@@ -52,18 +52,7 @@ body{background-image: url("Background.jpg");}
     left: 20%;
     top: 83%;
 }
-#Email{
-    width: 12.5cm;
-}
-#Time{
-    width: 4cm;
-}
-#Date{
-    width: 7cm;
-}
-#Adress{
-    width: 10cm;
-}
+
 #Name{
     width: 7.5cm;
     margin: 15px;
@@ -80,11 +69,7 @@ body{background-image: url("Background.jpg");}
     text-align: center;
     
 }
-#DateTime{
-    font-family: monospace;
-    font-size: 20pt;
-    color: whitesmoke;
-}
+
 #alert{
     font-size: 15px;
     color: red;

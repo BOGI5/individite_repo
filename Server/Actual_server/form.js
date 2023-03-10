@@ -8,12 +8,6 @@ function formCheck(){
         document.getElementById('reset').style.display="none";
         document.getElementById('submit').style.display="block";
         document.getElementById('Name').style.display="none";
-        document.getElementById('Address').style.display="none";
-        document.getElementById('Email').style.display="none";
-        document.getElementById('Tel').style.display="none";
-        document.getElementById('Date').style.display="none";
-        document.getElementById('Time').style.display="none";
-        document.getElementById('DateTime').style.display="none";
         document.getElementById('send').style.display="block";
     } else {
         document.getElementById('alert').style.display="block";
