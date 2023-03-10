@@ -74,7 +74,10 @@ def passwords():
         with open(rf'Password_work/Database/new_database/{username}.json', 'r') as file:
             json_file = file.read()
             json_file = json.loads(json_file)
-            if json_file[username]:
+            try:
+                json_file[username]
+            except KeyError:
+                return render_template('passwords.html')
                 new_json = json.load({})
                 for website in json_file[username]:
                     new_json.update({ "website": website, "password": Password_work.decrypt(username, website, str(key), username, password) })
