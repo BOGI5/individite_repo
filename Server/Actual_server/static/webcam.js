@@ -41,7 +41,7 @@
       video = document.getElementById("video");
       canvas = document.getElementById("canvas");
       photo = document.getElementById("photo");
-      startbutton = document.getElementById("startbutton");
+      startbutton = document.getElementById("takePhoto");
   
       navigator.mediaDevices
         .getUserMedia({ video: true, audio: false })
@@ -68,7 +68,7 @@
   
             video.setAttribute("width", width);
             video.setAttribute("height", height);
-            canvas.setAttribute("width", width);
+            img.setAttribute("width", width);
             canvas.setAttribute("height", height);
             streaming = true;
           }
@@ -79,13 +79,13 @@
       startbutton.addEventListener(
         "click",
         (ev) => {
-          takepicture();
+          takephoto();
           ev.preventDefault();
         },
         false
       );
   
-      clearphoto();
+      //clearphoto();
     }
   
     // Fill the photo with an indication that none has been
