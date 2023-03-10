@@ -1,5 +1,6 @@
 """Decode base64 data and create image"""
 import base64
+import os
 
 
 def get_image():
@@ -10,15 +11,13 @@ def get_image():
     :img(str): Image type i.e. jpeg, jpg, png etc.
     """
     # Get name and image files path
-    name_path = r'name.txt'
-    img_path = r'image.txt'
-
-    # Extract name
-    with open(name_path, 'r') as file:
-        name = file.read()
+    img_path = r'/home/bogi5/Github/individite_repo/Server/Face_image_base64'
+    name = os.listdir(img_path)[0]
+    name = name.split('.')[0]
+    img = os.path.join(img_path, name + '.txt')
 
     # Extract base64 data
-    with open(img_path, 'r') as file:
+    with open(img, 'r') as file:
         text = file.read()
 
     # Remove the type from the base64 data

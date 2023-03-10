@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect
 import os
+from base64_to_image import get_image
 
-from
 
 app = Flask(__name__)
 
@@ -32,7 +32,7 @@ def temp():
 
         with open(path, 'w') as file:
             file.write(takendataURL)
-
+        get_image()
 
     return render_template('temp.html')
 
