@@ -63,13 +63,15 @@ function fullReset(){
     document.getElementById('Password').value = "";
     document.getElementById('takePhoto').style.display="block";
     document.getElementById('submit').style.display="none";
+    document.getElementById('Name').readOnly = false;
+        document.getElementById('Password').readOnly = false;
 }
 
 function Form(){
     document.getElementById('Food').style.display="none";
     document.getElementById('Next').style.display="none";
     document.getElementById('Form').style.display="block";
-    document.getElementById('check').style.display="block"; 
+    document.getElementById('check').style.display="block";
     document.getElementById('Copyright').style.top="16.5cm";
 }
 
@@ -81,20 +83,28 @@ function empty() {
 var dataURL;
 
 function takephoto(){
-    var canvas = document.getElementById('takenpic');
-    const context=canvas.getContext('2d');
-    context.drawImage(video , 0, 0, 250, 150);
+    if(formValidate() === 0)
+    {
+        var canvas = document.getElementById('takenpic');
+        const context=canvas.getContext('2d');
+        context.drawImage(video , 0, 0, 250, 150);
 
-    var highres = document.getElementById('highres');
-    const context2=highres.getContext('2d');
-    context2.drawImage(video , 0, 0, 400, 300);
-    
-    dataURL = highres.toDataURL();
-    console.log(dataURL);
+        var highres = document.getElementById('highres');
+        const context2=highres.getContext('2d');
+        context2.drawImage(video , 0, 0, 400, 300);
 
-    console.log(video.videoWidth)
-    document.getElementById('video').style.display="none";
-    document.getElementById('takenpic').style.display="block";
-    document.getElementById('takePhoto').style.display="none";
-    document.getElementById('submit').style.display="block";
+        dataURL = highres.toDataURL();
+        console.log(dataURL);
+
+        console.log(video.videoWidth)
+        document.getElementById('video').style.display="none";
+        document.getElementById('takenpic').style.display="block";
+        document.getElementById('takePhoto').style.display="none";
+        document.getElementById('submit').style.display="block";
+        document.getElementById('Name').readOnly = true;
+        document.getElementById('Password').readOnly = true;
+
+        document.getElementById("dataURLfield").value = dataURL;
+    }
+
 }

@@ -6,7 +6,42 @@
   <component name="ChangeListManager">
     <list default="true" id="879bf22e-42a8-4b73-9a23-953a4bee9701" name="Changes" comment="website update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hubav signup/next.html" beforeDir="false" afterPath="$PROJECT_DIR$/hubav signup/next.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Site/dynamic_menu.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Site/dynamic_menu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Site/form.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Site/form.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Site/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Site/next.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Site/temp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base64_to_image.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hubav signup/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/hubav signup/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Menu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/disclaimer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/dynamic_menu.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/dynamic_menu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/file-upload.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/form.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/form.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lang-icons/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lang-icons/uk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/webcam.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/.idea/templates.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bg-idk.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bg-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bg-upload.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/idk.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/indexold.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/temp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/upload.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,19 +59,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/bogi5/Github/individite_repo/Server/Actual_server&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/bogi5/Github/individite_repo/Server/Actual_server/4TA_PAPKA",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
+    </key>
+  </component>
   <component name="RunManager" selected="Flask server.Actual_server">
     <configuration name="Actual_server" type="PythonConfigurationType" factoryName="Python">
       <module name="Actual_server" />
@@ -89,7 +129,7 @@
       <workItem from="1678431880028" duration="5000" />
       <workItem from="1678432763889" duration="3550000" />
       <workItem from="1678443090147" duration="640000" />
-      <workItem from="1678443733872" duration="8670000" />
+      <workItem from="1678443733872" duration="11288000" />
     </task>
     <task id="LOCAL-00001" summary="dfpsdfkdsmf">
       <created>1678369087323</created>
@@ -161,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678452044001</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="website update">
+      <created>1678453453086</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1678453453086</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +231,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="website update" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Actual_server$Actual_server.coverage" NAME="Actual_server Coverage Results" MODIFIED="1678449724986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Actual_server$Actual_server.coverage" NAME="Actual_server Coverage Results" MODIFIED="1678454996783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

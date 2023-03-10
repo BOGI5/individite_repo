@@ -1,3 +1,10 @@
+
+* {
+    margin: 0;
+    
+        
+    
+}
 #MenuImage{
     transition: 0.8s;
     background-color: rgba(32, 44, 44, 1);
@@ -7,13 +14,25 @@
     background-color: rgb(189, 188, 188);
     cursor: pointer;
 }
-#menu_line{
+#menu_line {
     background-color: rgba(32, 44, 44, 1);
     top: 0;
-    left: 0;
-    right: 0;
+    width: 100%;
     position: fixed;
+    height: 75px;
+    display: flex;
+    
 }
+
+#Title{
+    position: fixed;
+    top: 2%;
+    left: 44.5%;
+    font-family: monospace;
+    font-size: 25pt;
+    color: whitesmoke;
+}
+
 #MainMenu{
     margin-top: 2cm;
     position: fixed;
@@ -43,12 +62,4 @@
     color: rgb(46, 45, 45);
     font-family: monospace;
     cursor: pointer;
-}
-#Title{
-    position: fixed;
-    top: 0cm;
-    left: 3cm;
-    font-family: monospace;
-    font-size: 25pt;
-    color: whitesmoke;
 }

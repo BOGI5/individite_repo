@@ -1,20 +1,23 @@
 <html>
     <head>
     <meta charset="UTF-8">
-    <title>Sign up</title>
-    <script src="static/dynamic_menu.js"></script>
-    <script src="static/form.js"></script>
-    <script src="static/webcam.js"></script>
-    <link rel="stylesheet" href="static/dynamic_menu.css">
-    <link rel="stylesheet" href="static/form.css">
-    <link rel="stylesheet" href="static/menu.css">
+        <title>Log in</title>
+        <script src="static/dynamic_menu.js"></script>
+        <script src="static/form.js"></script>
+        <script src="static/webcam.js"></script>
+        <link rel="stylesheet" href="static/dynamic_menu.css">
+        <link rel="stylesheet" href="static/form.css">
+        <link rel="stylesheet" href="static/menu.css">
     </head>
     <body>
-    <div>
-        <form action="{{ url_for("temp")}}" method="post" id="Form">
-            <input type="text" name="dataURL" style="display:block" id="dataURLfield">
-            <input type="text" name="Name" placeholder="Input your name" id="Name" class="FormInput _req">
-            <input type="password" name="Password" placeholder="Input your password" id="Password" class="FormInput _req">
+        <div id="menu_line">
+            <button onclick="Menu()" id="MenuImage">
+                <img src="static/Menu.png" style="height: 2cm; width: 2cm;">
+            </button>
+            <p id="Title">Log in</p>
+        </div>
+
+        <div id="Form">
             <center>
                 <video id="video">Video stream not available.</video>
                 <center>
@@ -22,17 +25,14 @@
                     <canvas id="highres" style="display: none" width="400" height="300"></canvas>
                 </center>
             </center>
-            <input type="submit" id="submit" value="Submit" class="FormInput">
+            <input type="text" name="Name" placeholder="Name" id="Name" class="FormInput _req">
+            <input type="password" name="Password" placeholder="Password" id="Password" class="FormInput _req">
+            <input type="submit" id="submit" value="Log in" class="FormInput">
             <input type="reset" id="reset" value="Reset" class="FormInput" onclick="fullReset()">
             <button class="FormInput" id="takePhoto" onclick="takephoto()">Take photo</button>
-        </form>
-    </div>
-    <div id="menu_line">
-        <button onclick="Menu()" id="MenuImage">
-            <img src="static/Menu.png" style="height: 2cm; width: 2cm;">
-        </button>
-        <p id="Title">Sign up:</p>
-    </div>
+        <p id="send">All input data are correct.<br>You can continue.<br></p>
+        </div>
+    
     <div id="MainMenu">
         <div class="ButtonsPosition">
             <a href="index.html"><button class="button"><strong>Home</strong></button></a>
@@ -43,9 +43,9 @@
         <div class="ButtonsPosition">
             <a href="about_us.html"><button class="button"><strong>About us</strong></button></a>
         </div>
-    </div>
-    <pre id="Copyright">
+    
+    <!-- <pre id="Copyright">
         This site was made for school project. This is not a real restaurant!
-    </pre>
+    </pre> -->
     </body>
 </html>

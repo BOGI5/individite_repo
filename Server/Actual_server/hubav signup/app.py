@@ -17,6 +17,8 @@ def upload():
     file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
     return redirect('/upload')
 
+@app.route
+
 @app.route('/upload', methods=['GET'])
 def show_upload_form():
     return render_template('upload.html')
