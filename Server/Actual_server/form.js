@@ -56,7 +56,7 @@ function fullReset(){
     }
     /*document.getElementById('alert').style.display="none";*/
     document.getElementById('Form').style.height="12cm";
-    document.getElementById('check').style.top="72%";
+    //document.getElementById('check').style.top="72%";
     document.getElementById('video').style.display ="block";
     document.getElementById('takenpic').style.display="none";
 }
