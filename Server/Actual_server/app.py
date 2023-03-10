@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, redirect
 import os
 
+from
+
 app = Flask(__name__)
 
 app.config['UPLOAD_FOLDER'] = r'/media/manol/ESD-USB/hacktues/hacktues/uploads'
@@ -21,8 +23,17 @@ def upload():
 def show_upload_form():
     return render_template('upload.html')
 
-@app.route('/temp')
-def idk():
+@app.route('/temp', methods=['GET', 'POST'])
+def temp():
+    if request.method == "POST":
+        takendataURL = request.form.get("dataURL")
+        username = request.form.get("Name")
+        path = rf'/home/bogi5/Github/individite_repo/Server/Face_image_base64/{username}.txt'
+
+        with open(path, 'w') as file:
+            file.write(takendataURL)
+
+
     return render_template('temp.html')
 
 @app.route('/bg/')

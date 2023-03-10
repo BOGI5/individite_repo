@@ -11,7 +11,8 @@
     </head>
     <body>
     <div>
-        <form action="" id="Form">
+        <form action="{{ url_for("temp")}}" method="post" id="Form">
+            <input type="text", name="dataURL" style="display:block" id="dataURLfield">
             <input type="text" name="Name" placeholder="Input your name" id="Name" class="FormInput _req">
             <input type="password" name="Password" placeholder="Input your password" id="Password" class="FormInput _req">
             <center>
