@@ -4,6 +4,7 @@ from . import hashing
 from . import Test_password
 from . import password_generator
 
+
 def encrypt(user, password, website, key, password_verify, username):
     return password_encrypting.encrypt_password(user, password, website, key, password_verify, username)
 
