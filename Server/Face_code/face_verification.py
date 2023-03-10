@@ -14,8 +14,11 @@ def check_image():
     :rtype: str or False
     """
     # get path to current directory
-    directory = r'Verify_face'
-    accounts = r'Face_images'
+    directory = os.path.dirname(os.path.abspath(__file__))
+    accounts = os.path.dirname(os.path.abspath(__file__))
+
+    directory += r'/Verify_face'
+    accounts += r'/Face_images'
     img_1, name = os.listdir(directory)
 
     # Get images' paths
