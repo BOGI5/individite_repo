@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect
 import os
 from base64_to_image import get_image
 import Password_work
-from face_verification import check_image
+from Face_code.face_verification import check_image
 
 
 app = Flask(__name__)

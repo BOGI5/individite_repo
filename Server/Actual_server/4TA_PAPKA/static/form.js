@@ -108,3 +108,21 @@ function takephoto(){
     }
 
 }
+
+// wait for everything to be loaded
+window.addEventListener('load', function () {
+    document.getElementById('Name').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+        }
+    }, false);
+    
+    document.getElementById('Password').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+        }
+    }, false);
+});
+
+
+
