@@ -81,37 +81,6 @@ body{
     top: 81%;
 }
 
-#add_pass {
-    width: 47.5px;
-    height: 60px;
-    position: absolute;
-    left: 10%;
-    top: 15%; /*trqbva da se uvelichava s 15 procenta za vsqka nova dobavena redichka*/
-}
-
-#site_url {
-    width: 275px;
-    height: 60px;
-    position: absolute;
-    left: 10%;
-    top: 0%; /*trqbva da se uvelichava s 15 procenta za vsqka nova dobavena redichka*/
-}
-
-#site_pass {
-    width: 275px;
-    height: 60px;
-    position: absolute;
-    left: 35%;
-    top: 0%; /*trqbva da se uvelichava s 15 procenta za vsqka nova dobavena redichka*/
-}
-
-#save_sinfo{
-    width: 275px;
-    height: 60px;
-    position: absolute;
-    left: 60%;
-    top: 0%; /*trqbva da se uvelichava s 15 procenta za vsqka nova dobavena redichka*/
-}
 
 #alert{
     font-size: 15px;

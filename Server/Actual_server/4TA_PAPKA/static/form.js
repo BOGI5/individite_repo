@@ -76,8 +76,81 @@ function Form(){
 }
 
 
-function empty() {
+function add_password() {
+    document.getElementById('add_pass').style.display = "none";
+    document.getElementById('site_url').style.display = "block";
+    document.getElementById('site_pass').style.display = "block";
+    document.getElementById('save_sinfo').style.display = "block";
+    document.getElementById('cancel_pass').style.display = "block";
+}
 
+function copyToClipboard() {
+    let text = document.getElementById('site_password').innerHTML;
+    const copyContent = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      console.log('Content copied to clipboard');
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+
+}
+}
+
+var level = 4;
+var num = 0;
+
+function add_after(){
+    /*'name', 'password', 'site_name', 'site_password'*/
+    const site_name_text = document.createTextNode("Text");
+    const site_password_text = document.createTextNode("Text");
+    const delete_text = document.createTextNode("Delete");
+    const copy_text = document.createTextNode("Copy");
+    const site_name = document.createElement("p");
+    const site_password = document.createElement("p");
+    const delete_button = document.createElement("button");
+    const copy_button = document.createElement("button");
+    delete_button.classList.add('delete_pass');
+    delete_button.appendChild(delete_text);
+    copy_button.classList.add('copy_pass');
+    copy_button.appendChild(copy_text);
+    site_name.classList.add('site_name');
+    site_name.appendChild(site_name_text);
+    site_password.classList.add('site_password');
+    site_password.appendChild(site_password_text);
+    const name = document.getElementById('name');
+    const password = document.getElementById('password');
+    const delete_but = document.getElementById('delete');
+    const copy = document.getElementById('copy');
+    level += 75;
+    site_name.id = num;
+    site_password.id = num;
+    delete_button.id = num;
+    copy_button.id = num;
+    num += 1;
+    site_name.style.top = level;
+    site_password.style.top = level;
+    delete_button.style.top = level;
+    copy_button.style.top = level;
+    name.appendChild(site_name);
+    password.appendChild(site_password);
+    delete_but.appendChild(delete_button);
+    copy.appendChild(copy_button);
+}
+
+
+function delete_password(id){
+    const element = document.getElementById(id);
+    element.parentNode.removeChild(element);
+}
+
+
+function cancel_password(){
+    document.getElementById('add_pass').style.display = "block";
+    document.getElementById('site_url').style.display = "none";
+    document.getElementById('site_pass').style.display = "none";
+    document.getElementById('save_sinfo').style.display = "none";
+    document.getElementById('cancel_pass').style.display = "none";
 }
 
 var dataURL;
