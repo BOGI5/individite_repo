@@ -55,7 +55,7 @@ function fullReset(){
         formRemoveError(input);
     }
     /*document.getElementById('alert').style.display="none";*/
-    //document.getElementById('Form').style.height="12cm";
+    document.getElementById('Form').style.height="3cm";
     //document.getElementById('check').style.top="72%";
     document.getElementById('video').style.display ="block";
     document.getElementById('takenpic').style.display="none";
