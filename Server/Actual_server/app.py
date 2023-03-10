@@ -23,7 +23,7 @@ def show_upload_form():
 
 @app.route('/temp')
 def idk():
-    return render_template('idk.html')
+    return render_template('temp.html')
 
 @app.route('/bg/')
 def bgindex():
@@ -36,6 +36,8 @@ def bgupload():
     # Save the file to the specified folder
     file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
     return 'File uploaded successfully!'
+
+
 
 @app.route('/bg/upload', methods=['GET'])
 def bgshow_upload_form():

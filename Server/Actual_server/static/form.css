@@ -2,7 +2,7 @@ body{background-image: url("Background.jpg");}
 #Form{
     position: absolute;
     top: 20%;
-    left: 12%;
+    left: 18%;
     background-color: rgba(32, 44, 44, 1);
     font-size: 2cm;
     border-radius: 7cm;
@@ -40,11 +40,11 @@ body{background-image: url("Background.jpg");}
     display: block;
 }
 #submit{
-    width: 10cm;
-    display: none;
+    width: 8.5cm;
     position: absolute;
-    left: 72%;
-    top: 50%;
+    top: 83%;
+    right: 20%;
+    display: none;
 }
 #reset{
     width: 8.5cm;

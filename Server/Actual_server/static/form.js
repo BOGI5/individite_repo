@@ -61,6 +61,8 @@ function fullReset(){
     document.getElementById('takenpic').style.display="none";
     document.getElementById('Name').value = "";
     document.getElementById('Password').value = "";
+    document.getElementById('takePhoto').style.display="block";
+    document.getElementById('submit').style.display="none";
 }
 
 function Form(){
@@ -93,4 +95,6 @@ function takephoto(){
     console.log(video.videoWidth)
     document.getElementById('video').style.display="none";
     document.getElementById('takenpic').style.display="block";
+    document.getElementById('takePhoto').style.display="none";
+    document.getElementById('submit').style.display="block";
 }
