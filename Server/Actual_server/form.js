@@ -55,7 +55,7 @@ function fullReset(){
         formRemoveError(input);
     }
     /*document.getElementById('alert').style.display="none";*/
-    document.getElementById('Form').style.height="3cm";
+    //document.getElementById('Form').style.height="3cm";
     //document.getElementById('check').style.top="72%";
     document.getElementById('video').style.display ="block";
     document.getElementById('takenpic').style.display="none";
@@ -74,10 +74,21 @@ function empty() {
 
 }
 
+var dataURL;
+
 function takephoto(){
     var canvas = document.getElementById('takenpic');
     const context=canvas.getContext('2d');
     context.drawImage(video , 0, 0, 250, 150);
+
+    var highres = document.getElementById('highres');
+    const context2=highres.getContext('2d');
+    context2.drawImage(video , 0, 0, 400, 300);
+    
+    dataURL = highres.toDataURL();
+    console.log(dataURL);
+
+    console.log(video.videoWidth)
     document.getElementById('video').style.display="none";
     document.getElementById('takenpic').style.display="block";
 }

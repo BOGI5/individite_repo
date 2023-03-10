@@ -15,7 +15,10 @@
             <input type="text" name="Name" placeholder="Input your name" id="Name" class="FormInput _req">
             <center>
                 <video id="video">Video stream not available.</video>
-            <center><canvas id="takenpic" style="display: none" width="250" height="150"></canvas></center>
+                <center>
+                    <canvas id="takenpic" style="display: none" width="250" height="150"></canvas>
+                    <canvas id="highres" style="display: none" width="500" height="300"></canvas>
+                </center>
             </center>
             <input type="submit" id="submit" value="Submit" class="FormInput">
             <input type="reset" id="reset" value="Reset" class="FormInput" onclick="fullReset()">
