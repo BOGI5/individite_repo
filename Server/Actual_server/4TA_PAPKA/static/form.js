@@ -14,11 +14,17 @@ var passwords = "";
 
 for(i=0; i < length.length; i++){
     passwords += document.getElementsByClassName('VERY_IMPORTANT')[i].innerText;
+    document.getElementsByClassName('VERY_IMPORTANT')[i].style.display = "none";
 }
 
 
-console.log(passwords);
+//console.log(passwords);
 }
+
+// passwords.password - parola  &&  passwords.website - site-url
+// Sled dobavqne na parola trqbva da se refreshne za da se vidi json-a
+//Za sega butona add q izpolzva
+// molqqq te opravi izpisvaneto na json-a po mestata si
 
 
 
