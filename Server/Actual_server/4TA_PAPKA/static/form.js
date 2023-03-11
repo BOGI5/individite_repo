@@ -94,7 +94,7 @@ var num = 0;
 
 
 function read_passwords(){
-    add_after(passwords.key, passwords.value);
+    add_after(passwords.webpage, passwords.password);
 }
 
 
