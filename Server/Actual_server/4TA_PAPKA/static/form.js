@@ -1,4 +1,4 @@
-var passwords = JSON.parse("{{passwords|tojson|safe}}");
+var passwords = JSON.parse("{{ passwords|safe }}");
 console.log(passwords);
 
 
