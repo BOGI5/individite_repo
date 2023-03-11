@@ -5,6 +5,23 @@
 // var passwords = '{{ new_json|safe }}';
 // console.log(passwords);
 
+// wait until in paragraph will be written and get it
+function call_me() {
+const length = document.getElementsByClassName('VERY_IMPORTANT');
+
+
+var passwords = "";
+
+for(i=0; i < length.length; i++){
+    passwords += document.getElementsByClassName('VERY_IMPORTANT')[i].innerText;
+}
+
+
+console.log(passwords);
+}
+
+
+
 
 
 
