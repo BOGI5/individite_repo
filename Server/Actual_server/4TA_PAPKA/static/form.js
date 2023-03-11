@@ -6,11 +6,10 @@
 // console.log(passwords);
 
 // wait until in paragraph will be written and get it
+var passwords = "";
 function call_me() {
 const length = document.getElementsByClassName('VERY_IMPORTANT');
 
-
-var passwords = "";
 
 for(i=0; i < length.length; i++){
     passwords += document.getElementsByClassName('VERY_IMPORTANT')[i].innerText;
@@ -28,46 +27,18 @@ for(i=0; i < length.length; i++){
 
 
 
-
-
-
-
-function formCheck(){
-    let error = formValidate();
-
-    if(error===0){
-        document.getElementById('alert').style.display="none";
-        document.getElementById('Form').style.height="12cm";
-        document.getElementById('check').style.display="none";
-        document.getElementById('reset').style.display="none";
-        document.getElementById('submit').style.display="block";
-        document.getElementById('Name').style.display="none";
-        document.getElementById('send').style.display="block";
-    } else {
-        document.getElementById('alert').style.display="block";
-        document.getElementById('Form').style.height="13cm";
-        document.getElementById('check').style.top="76.5%";
-    }
-}
-
 function formValidate(){
     let error = 0;
     let formReq = document.querySelectorAll('._req');
     for (let index=0; index<formReq.length; index++){
         const input = formReq[index];
         formRemoveError(input);
-        if(input.classList.contains('_email')){
-            if(emailTest(input)){
-                formAddError(input);
-                error++;
-            } 
-        } else {
-            if(input.value === ''){
-                formAddError(input);
-                error++;
-            }
+        if(input.value === ''){
+            formAddError(input);
+            error++;
         }
     }
+
     return error;
 }
 function formAddError(input){
@@ -85,9 +56,6 @@ function fullReset(){
         const input = formReq[index];
         formRemoveError(input);
     }
-    /*document.getElementById('alert').style.display="none";*/
-    //document.getElementById('Form').style.height="3cm";
-    //document.getElementById('check').style.top="72%";
     document.getElementById('video').style.display ="block";
     document.getElementById('takenpic').style.display="none";
     document.getElementById('Name').value = "";
@@ -95,16 +63,9 @@ function fullReset(){
     document.getElementById('takePhoto').style.display="block";
     document.getElementById('submit').style.display="none";
     document.getElementById('Name').readOnly = false;
-        document.getElementById('Password').readOnly = false;
+    document.getElementById('Password').readOnly = false;
 }
 
-function Form(){
-    document.getElementById('Food').style.display="none";
-    document.getElementById('Next').style.display="none";
-    document.getElementById('Form').style.display="block";
-    document.getElementById('check').style.display="block";
-    document.getElementById('Copyright').style.top="16.5cm";
-}
 
 
 function add_password() {
@@ -131,10 +92,16 @@ function copyToClipboard() {
 var level = 4;
 var num = 0;
 
-function add_after(){
+
+function read_passwords(){
+    add_after(passwords.key, passwords.value);
+}
+
+
+function add_after(name_string, password_string){
     /*'name', 'password', 'site_name', 'site_password'*/
-    const site_name_text = document.createTextNode("Text");
-    const site_password_text = document.createTextNode("Text");
+    const site_name_text = document.createTextNode(name_string);
+    const site_password_text = document.createTextNode(password_string);
     const delete_text = document.createTextNode("Delete");
     const copy_text = document.createTextNode("Copy");
     const site_name = document.createElement("p");

@@ -122,25 +122,7 @@ h3{
     top: 2cm;
     left: 6.5cm;
 }
-#Next{
-    position: fixed;
-    bottom: 1cm;
-    left: 15cm;
-    width: 10cm;
-    height: 2cm;
-    background-color: rgba(32, 44, 44, 1);
-    font-size: 25px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: whitesmoke;
-    border-radius: 1cm;
-    border-width: 0;
-    transition: 0.8s;
-}
-#Next:hover{
-    cursor: pointer;
-    background-color: rgb(189, 188, 188);
-    color: rgb(46, 45, 45);
-}
+
 .food{
     border-radius: 1cm;
     width: 2cm;
