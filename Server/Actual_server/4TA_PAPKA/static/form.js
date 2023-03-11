@@ -1,5 +1,10 @@
-var passwords = JSON.parse("{{ passwords|safe }}");
-console.log(passwords);
+// var passwords = JSON.parse("{{ passwords|safe }}");
+// console.log(JSON.parse('{{ passwords }}'));
+// console.log(passwords);
+
+// var passwords = '{{ new_json|safe }}';
+// console.log(passwords);
+
 
 
 

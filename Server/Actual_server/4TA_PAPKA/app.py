@@ -5,6 +5,7 @@ import Password_work
 from face_verification import check_image
 from facial_expression_recognition import face_features
 from tensorflow import keras
+from flask import jsonify
 import json
 
 app = Flask(__name__)
@@ -82,7 +83,7 @@ def passwords():
             for website in json_file[username]:
                 new_json.update({ "website": website, "password": Password_work.decrypt(username, website, str(key), username, password) })
             new_json = json.dumps(new_json)
-        return render_template('passwords.html', passwords = new_json)
+        return render_template('passwords.html', data = new_json)
         
 
     return render_template('passwords.html')
