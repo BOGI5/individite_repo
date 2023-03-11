@@ -30,7 +30,7 @@ def signup():
         key = keras.preprocessing.image.load_img(rf'Face_images/{username}.png')
         key = keras.preprocessing.image.img_to_array(key, dtype='float32')
         get_image(takendataURL, username, r"/Verify_face/")
-        Password_work.encrypt('test', 'test', 'test', str(key), password, username)
+        Password_work.encrypt('dtfyuhgfcyhugfdxgyhty678yutre567uyhgtfrde456ytfdre54678iuygtfr56t78uijhgty67890poi8967tyuio876rtfghuio87y6t5rtyui8y76t54ertfyguhy76t54e3erdfghjui7y6t54eerdfghui87654ertfghui8y7654ersdfghjui876rtyghio98765rtyui87y6t5ertyuio8uy76t5rrefghuio8u7y', 'test', 'test', str(key), password, username)
         os.remove(r'Verify_face/name.txt')
         os.remove(rf'Verify_face/{username}.png')
 
@@ -51,7 +51,7 @@ def login():
             key = str(check_image())
             check = False
             if key:
-                if Password_work.decrypt('test', 'test', key, username, password):
+                if Password_work.decrypt('dtfyuhgfcyhugfdxgyhty678yutre567uyhgtfrde456ytfdre54678iuygtfr56t78uijhgty67890poi8967tyuio876rtfghuio87y6t5rtyui8y76t54ertfyguhy76t54e3erdfghjui7y6t54eerdfghui87654ertfghui8y7654ersdfghjui876rtyghio98765rtyui87y6t5ertyuio8uy76t5rrefghuio8u7y', 'test', key, username, password):
                     if face_features() == 'happy':
                         check = True
             print(check)
@@ -78,10 +78,10 @@ def passwords():
                 json_file[username]
             except KeyError:
                 return render_template('passwords.html')
-                new_json = json.load({})
-                for website in json_file[username]:
-                    new_json.update({ "website": website, "password": Password_work.decrypt(username, website, str(key), username, password) })
-                return render_template('passwords.html', passwords = json.dumps(new_json))
+            new_json = json.load({})
+            for website in json_file[username]:
+                new_json.update({ "website": website, "password": Password_work.decrypt(username, website, str(key), username, password) })
+            return render_template('passwords.html', passwords = json.dumps(new_json))
         
 
     return render_template('passwords.html')
