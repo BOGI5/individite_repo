@@ -16,6 +16,7 @@ for(i=0; i < length.length; i++){
     document.getElementsByClassName('VERY_IMPORTANT')[i].style.display = "none";
 }
 
+passwords = JSON.parse(passwords);
 
 //console.log(passwords);
 }
