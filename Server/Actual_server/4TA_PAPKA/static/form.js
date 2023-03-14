@@ -16,6 +16,9 @@ for(i=0; i < length.length; i++){
     document.getElementsByClassName('VERY_IMPORTANT')[i].style.display = "none";
 }
 
+
+passwords = passwords.replace(/'/g, '"');
+console.log(passwords);
 passwords = JSON.parse(passwords);
 
 //console.log(passwords);
@@ -92,10 +95,14 @@ function copyToClipboard() {
 
 var level = 4;
 var num = 0;
+var flag = 0;
 
 
 function read_passwords(){
-    add_after(passwords.webpage, passwords.password);
+    if(flag > 0){
+        add_after(passwords.website, passwords.password);
+    }
+    flag += 1;
 }
 
 

@@ -4,7 +4,7 @@ from tensorflow import keras
 from deepface.DeepFace import analyze
 
 
-def face_features():
+def face_features(username):
     """Function which identify facial emotion.
     :emotion(str): Facial emotion
     :img(numpy.ndarray): NumPy tensor representation of the image
@@ -12,9 +12,7 @@ def face_features():
     :rtype: str
     """
     # Get image's path
-    directory = r'Face_expressions'
-    image = os.listdir(directory)[0]
-    path_image = os.path.join(directory, image)
+    path_image = os.path.dirname(os.path.abspath(__file__)) + r'/Face_expressions' + rf'/{username}.png'
 
     # Convert the image to NumPy array with data type unsigned int(8 bit)
     img = keras.preprocessing.image.load_img(path_image)
