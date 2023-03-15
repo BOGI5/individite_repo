@@ -27,16 +27,11 @@ def signup():
         session["username"] = username
         session["password"] = password
         get_image(takendataURL, username, r"/Face_images/")
-        # with open(r'Verify_face/name.txt', 'w') as file:
-        #     file.write(username)
-        path_test = os.path.dirname(os.path.abspath(__file__))
-        path_test += r'/Face_images/' + username + '.png'
-        key = keras.preprocessing.image.load_img(path_test)
+        path_for_image = os.path.dirname(os.path.abspath(__file__))
+        path_for_image += r'/Face_images/' + username + '.png'
+        key = keras.preprocessing.image.load_img(path_for_image)
         key = keras.preprocessing.image.img_to_array(key, dtype='float32')
-        # get_image(takendataURL, username, r"/Verify_face/")
         Password_work.encrypt('dtfyuhgfcyhugfdxgyhty678yutre567uyhgtfrde456ytfdre54678iuygtfr56t78uijhgty67890poi8967tyuio876rtfghuio87y6t5rtyui8y76t54ertfyguhy76t54e3erdfghjui7y6t54eerdfghui87654ertfghui8y7654ersdfghjui876rtyghio98765rtyui87y6t5ertyuio8uy76t5rrefghuio8u7y', 'test', 'test', str(key), password, username)
-        # os.remove(r'Verify_face/name.txt')
-        # os.remove(rf'Verify_face/{username}.png')
         return redirect("/passwords/")
 
     return render_template('signup.html')
@@ -49,13 +44,11 @@ def login():
             takendataURL = request.form.get("dataURL")
             username = str(request.form.get("Name"))
             password = str(request.form.get("Password"))
-            verify = os.path.dirname(os.path.abspath(__file__))
-            verify += r'/Verify_face/'
-            path_img = os.path.dirname(os.path.abspath(__file__))
-            path_img += r'/Face_images/'
-            get_image(takendataURL, username, verify)
-            get_image(takendataURL, username, path_img)
-            if not os.path.exists(rf'Face_images/{username}.png'):
+            get_image(takendataURL, username, r'/Verify_face/')
+            get_image(takendataURL, username, r'/Face_images/')
+            path_for_image = os.path.dirname(os.path.abspath(__file__))
+            path_for_image += r'/Verify_face/' + username + '.png'
+            if not os.path.exists(path_for_image):
                 return render_template('login.html', data = "User does not exist")
             session["username"] = username
             key = str(check_image(username))
@@ -84,20 +77,20 @@ def passwords():
     if request.method == "POST":
         website = request.form.get("site_url")
         password_to_encrypt = request.form.get("site_pass")
-        path_test = os.path.dirname(os.path.abspath(__file__))
-        path_test += r'/Face_images/' + username + '.png'
-        key = keras.preprocessing.image.load_img(path_test)
+        path_for_image = os.path.dirname(os.path.abspath(__file__))
+        path_for_image += r'/Face_images/' + username + '.png'
+        key = keras.preprocessing.image.load_img(path_for_image)
         key = keras.preprocessing.image.img_to_array(key, dtype='float32')
         Password_work.encrypt(username, password_to_encrypt, website, str(key), password, username)
     if request.method == "GET":
-        path_test = os.path.dirname(os.path.abspath(__file__))
-        path_test += r'/Face_images/' + username + '.png'
-        key = keras.preprocessing.image.load_img(path_test)
+        path_for_image_and_database = os.path.dirname(os.path.abspath(__file__))
+        path_for_image_and_database += r'/Face_images/' + username + '.png'
+        key = keras.preprocessing.image.load_img(path_for_image_and_database)
         key = keras.preprocessing.image.img_to_array(key, dtype='float32')
         # Go through all the passwords and decrypt them
-        path_test = os.path.dirname(os.path.abspath(__file__))
-        path_test += r'/Password_work/Database/new_database/' + username + '.json'
-        with open(path_test, 'r') as file:
+        path_for_image_and_database = os.path.dirname(os.path.abspath(__file__))
+        path_for_image_and_database += r'/Password_work/Database/new_database/' + username + '.json'
+        with open(path_for_image_and_database, 'r') as file:
             json_file = file.read()
             json_file = json.loads(json_file)
             try:
