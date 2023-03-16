@@ -139,6 +139,10 @@ h3{
     background-color: black;
     border-radius: 75px;
     align-items: center;
+    transform: rotateY(180deg);
+    -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+    -moz-transform:rotateY(180deg); /* Firefox */
+    /*Mirror code ends*/
 }
 
 
