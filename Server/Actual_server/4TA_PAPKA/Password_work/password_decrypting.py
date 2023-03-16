@@ -43,7 +43,7 @@ def decrypt_password(user, website, key, username, password_verify):
             password = Fernet(key).decrypt(password)
             return password.decode()
         except:
-            return False
+            return "Blob"
     else:
         return False
 
