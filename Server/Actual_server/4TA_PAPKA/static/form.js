@@ -18,7 +18,7 @@ for(i=0; i < length.length; i++){
     passwords += document.getElementsByClassName('VERY_IMPORTANT')[i].innerText;
     document.getElementsByClassName('VERY_IMPORTANT')[i].style.display = "none";
 }
-
+var eligibleForRed=true;
 
 passwords = passwords.replace(/'/g, '"');
 passwords = JSON.parse(passwords);
@@ -70,6 +70,8 @@ function fullReset(){
     document.getElementById('submit').style.display="none";
     document.getElementById('Name').readOnly = false;
     document.getElementById('Password').readOnly = false;
+    document.getElementById('site_url').classList.remove('_error');
+    document.getElementById('site_pass').classList.remove('_error');
 }
 
 
@@ -80,6 +82,8 @@ function add_password() {
     document.getElementById('site_pass').style.display = "block";
     document.getElementById('save_sinfo').style.display = "block";
     document.getElementById('cancel_pass').style.display = "block";
+    document.getElementById('site_url').classList.remove('_error');
+    document.getElementById('site_pass').classList.remove('_error');
 }
 
 var level = 4;
@@ -234,7 +238,8 @@ document.addEventListener('invalid', (function(){
       e.preventDefault();
 
     //red border for invalid fields
-        e.target.classList.add('_error');
+       // if(eligibleForRed)
+            e.target.classList.add('_error');
 
       // optionally fire off some custom validation handler
       // myValidation();
