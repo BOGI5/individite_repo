@@ -103,6 +103,17 @@ def passwords():
 
     return redirect("/passwords/")
 
+@app.route('/delete/', methods=["GET", "POST"])
+def delete():
+    if not session.get("username"):
+        return redirect("/")
+    if request.method == "GET":
+        website = request.args.get('del')
+        username = session.get("username")
+        if website:
+            Password_work.delete_password(username, website, username)
+    return redirect("/passwords/")
+
 
 
 

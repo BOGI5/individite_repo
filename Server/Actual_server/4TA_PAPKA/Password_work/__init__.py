@@ -3,6 +3,7 @@ from . import password_decrypting
 from . import hashing
 from . import Test_password
 from . import generate_password
+from . import password_delete
 
 
 def encrypt(user, password, website, key, password_verify, username):
@@ -27,3 +28,6 @@ def common_used_passwords(user, website, key, username, password_verify):
 
 def generate_password(len, key_word=""):
     return generate_password().generate_password(len, key_word)
+
+def delete_password(user, website, username):
+    return password_delete.delete_password(user, website, username)

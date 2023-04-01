@@ -114,6 +114,7 @@ function add_after(name_string, password_string){
     copy_button.appendChild(copy_text);
     copy_button.classList.add('copy_pass');
     copy_button.setAttribute("onclick", `copyToClipboard(${num})`);
+    delete_button.setAttribute("onclick", `delete_password('${name_string}')`);
     site_name.classList.add('site_name');
     site_name.appendChild(site_name_text);
     site_password.classList.add('site_password');
@@ -141,9 +142,9 @@ function copyToClipboard(id){
 }
 
 
-function delete_password(id){
-    const element = document.getElementById(id);
-    element.parentNode.removeChild(element);
+function delete_password(web){
+    location.href = "/delete/?del=" + web;
+
 }
 
 
