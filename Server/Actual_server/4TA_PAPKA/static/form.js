@@ -10,6 +10,9 @@ var passwords = "";
 function call_me() {
 const length = document.getElementsByClassName('VERY_IMPORTANT');
 
+if (length.length === 0) {
+    return 0;
+}
 
 for(i=0; i < length.length; i++){
     passwords += document.getElementsByClassName('VERY_IMPORTANT')[i].innerText;
@@ -18,9 +21,8 @@ for(i=0; i < length.length; i++){
 
 
 passwords = passwords.replace(/'/g, '"');
-console.log(passwords);
 passwords = JSON.parse(passwords);
-
+return 1;
 //console.log(passwords);
 }
 
@@ -179,18 +181,32 @@ function takephoto(){
 }
 
 
+function call_funcs(){
+    if(call_me() === 1){
+        read_passwords();
+    }
+}
+
+
 window.addEventListener('load', function () {
-    document.getElementById('Name').addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-        }
-    }, false);
     
-    document.getElementById('Password').addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-        }
-    }, false);
+    if(document.getElementById('Name') != null){
+        document.getElementById('Name').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+            }
+        }, false);
+    }
+    
+    if(document.getElementById('Password') != null){
+        document.getElementById('Password').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+            }
+        }, false);
+    }
+
+    call_funcs();
 });
 
 

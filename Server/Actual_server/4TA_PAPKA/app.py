@@ -5,7 +5,6 @@ import Password_work
 from face_verification import check_image
 from facial_expression_recognition import face_features
 from tensorflow import keras
-from flask import jsonify
 import json
 from flask_session import Session
 
@@ -102,7 +101,7 @@ def passwords():
         return render_template('passwords.html', data = new_json)
         
 
-    return render_template('passwords.html')
+    return redirect("/passwords/")
 
 
 
