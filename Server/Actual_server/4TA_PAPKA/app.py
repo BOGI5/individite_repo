@@ -95,9 +95,9 @@ def passwords():
                 json_file[username]
             except KeyError:
                 return render_template('passwords.html')
-            new_json = dict()
+            new_json = list()
             for website in json_file[username]:
-                new_json.update({ "website": website, "password": Password_work.decrypt(username, website, str(key), username, password) })
+                new_json.append( { "website": website, "password": Password_work.decrypt(username, website, str(key), username, password) } )
             new_json = json.dumps(new_json)
         return render_template('passwords.html', data = new_json)
         

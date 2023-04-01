@@ -100,7 +100,9 @@ var flag = 0;
 
 function read_passwords(){
     if(flag > 0){
-        add_after(passwords.website, passwords.password);
+        for(var i = 0; i<passwords.length; i++){
+            add_after(passwords[i].website, passwords[i].password)
+        }
     }
     flag += 1;
 }
