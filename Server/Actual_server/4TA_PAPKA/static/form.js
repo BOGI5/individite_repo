@@ -211,3 +211,32 @@ window.addEventListener('load', function () {
 
 
 
+//for better validation
+/*document.addEventListener("DOMContentLoaded", function() {
+    var elements = document.getElementsByTagName("INPUT");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].oninvalid = function(e) {
+            e.target.setCustomValidity("");
+            if (!e.target.validity.valid) {
+                //e.target.setCustomValidity("abv");
+            }
+        };
+        elements[i].oninput = function(e) {
+            e.target.setCustomValidity("");
+        };
+    }
+  })*/
+
+//for better validation 2
+document.addEventListener('invalid', (function(){
+    return function(e) {
+      //prevent the browser from showing default error bubble / hint
+      e.preventDefault();
+
+    //red border for invalid fields
+        e.target.classList.add('_error');
+
+      // optionally fire off some custom validation handler
+      // myValidation();
+    };
+})(), true);
