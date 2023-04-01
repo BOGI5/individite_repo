@@ -80,33 +80,18 @@ function add_password() {
     document.getElementById('cancel_pass').style.display = "block";
 }
 
-function copyToClipboard() {
-    let text = document.getElementById('site_password').innerHTML;
-    const copyContent = async () => {
-    try {
-      await navigator.clipboard.writeText(text);
-      console.log('Content copied to clipboard');
-    } catch (err) {
-      console.error('Failed to copy: ', err);
-    }
-
-}
-}
-
 var level = 4;
 var num = 0;
-var flag = 0;
 
 
 function read_passwords(){
-    if(flag > 0){
-        for(var i = 0; i<passwords.length; i++){
-            add_after(passwords[i].website, passwords[i].password)
-        }
+    for(var i = 0; i<passwords.length; i++){
+        add_after(passwords[i].website, passwords[i].password)
     }
-    flag += 1;
 }
 
+
+var flag = 0;
 
 function add_after(name_string, password_string){
     /*'name', 'password', 'site_name', 'site_password'*/
@@ -120,8 +105,9 @@ function add_after(name_string, password_string){
     const copy_button = document.createElement("button");
     delete_button.classList.add('delete_pass');
     delete_button.appendChild(delete_text);
-    copy_button.classList.add('copy_pass');
     copy_button.appendChild(copy_text);
+    copy_button.classList.add('copy_pass');
+    copy_button.setAttribute("onclick", `copyToClipboard(${num})`);
     site_name.classList.add('site_name');
     site_name.appendChild(site_name_text);
     site_password.classList.add('site_password');
@@ -131,10 +117,7 @@ function add_after(name_string, password_string){
     const delete_but = document.getElementById('delete');
     const copy = document.getElementById('copy');
     level += 75;
-    site_name.id = num;
     site_password.id = num;
-    delete_button.id = num;
-    copy_button.id = num;
     num += 1;
     site_name.style.top = level;
     site_password.style.top = level;
@@ -144,6 +127,11 @@ function add_after(name_string, password_string){
     password.appendChild(site_password);
     delete_but.appendChild(delete_button);
     copy.appendChild(copy_button);
+}
+
+function copyToClipboard(id){
+    let text = document.getElementById(String(id)).innerHTML;
+    navigator.clipboard.writeText(text);
 }
 
 
