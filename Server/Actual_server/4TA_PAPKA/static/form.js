@@ -139,7 +139,7 @@ function copyToClipboard(id){
 
 
 function delete_password(web){
-    location.href = "http://127.0.0.1:5000/delete/?del=" + web;
+    location.href = "/delete/?del=" + web;
 
 }
 
