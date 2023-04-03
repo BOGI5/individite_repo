@@ -1,6 +1,6 @@
 body{
     background: rgb(9,9,121);
-    background: linear-gradient(90deg, rgba(9,9,121,1) 5%, rgba(126,42,205,1) 93%);
+    background: linear-gradient(90deg, rgba(9,9,121,1) 5%, rgba(126,42,205,1) 70%);
 }
 html{
     height: 100%;
@@ -154,6 +154,10 @@ h3{
     background-color: black;
     border-radius: 75px;
     align-items: center;
+  /*  transform: rotateY(180deg);
+    -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+    -moz-transform:rotateY(180deg); /* Firefox */
+    /*Mirror code ends*/
 }
 
 #dataURLfield{
@@ -190,4 +194,12 @@ h3{
 .subdisclaimer > p{
 	font-size: 37px;
 	color: white;
+}
+
+#d0{
+    display: none;
+}
+
+#c0{
+    display: none;
 }
