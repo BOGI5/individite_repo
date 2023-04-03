@@ -125,6 +125,8 @@ function add_after(name_string, password_string){
     const copy = document.getElementById('copy');
     level += 75;
     site_password.id = num;
+    delete_button.id = "d"+String(num);
+    copy_button.id = "c"+String(num);
     num += 1;
     site_name.style.top = level;
     site_password.style.top = level;
@@ -209,6 +211,11 @@ window.addEventListener('load', function () {
                 e.preventDefault();
             }
         }, false);
+    }
+
+    if(document.getElementById('site_url') != null){
+        document.getElementById('delete').style.display = "none";
+        document.getElementById('copy').style.display = "none";
     }
 
     call_funcs();
