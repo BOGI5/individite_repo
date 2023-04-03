@@ -192,6 +192,10 @@ function call_funcs(){
     }
 }
 
+function logout(){
+    location.href = "/logout";
+}
+
 
 window.addEventListener('load', function () {
     

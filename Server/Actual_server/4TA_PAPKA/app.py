@@ -7,11 +7,18 @@ from facial_expression_recognition import face_features
 from tensorflow import keras
 import json
 from flask_session import Session
+from datetime import timedelta
 
 app = Flask(__name__)
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
+
+
+@app.before_first_request
+def make_session_timeout():
+    session.permanent = True
+    app.permanent_session_lifetime = timedelta(minutes=10)
 
 @app.route('/')
 def home():
@@ -116,6 +123,14 @@ def delete():
         if website:
             Password_work.delete_password(username, website, username)
     return redirect("/passwords/")
+
+
+@app.route('/logout/')
+def logout():
+    if not session.get("username"):
+        return redirect("/")
+    session.clear()
+    return redirect("/")
 
 
 
