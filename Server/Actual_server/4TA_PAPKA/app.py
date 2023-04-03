@@ -61,7 +61,7 @@ def login():
             if Password_work.decrypt('dtfyuhgfcyhugfdxgyhty678yutre567uyhgtfrde456ytfdre54678iuygtfr56t78uijhgty67890poi8967tyuio876rtfghuio87y6t5rtyui8y76t54ertfyguhy76t54e3erdfghjui7y6t54eerdfghui87654ertfghui8y7654ersdfghjui876rtyghio98765rtyui87y6t5ertyuio8uy76t5rrefghuio8u7y', 'test', key, username, password) != "Blob":
                 session["password"] = password
                 if str(face_features(username)) == 'happy':
-                    return redirect("/passwords/")
+                    return redirect("/login2/")
                 else:
                     print('smile')
                     return render_template('login.html', data = "Please smile")
@@ -141,8 +141,8 @@ if __name__ == '__main__':
     app.run()
 
 
-@app.route('/login/', methods=["GET", "POST"])
-def login():
+@app.route('/login2/', methods=["GET", "POST"])
+def login2():
     if request.method == "POST":
         takendataURL = request.form.get("dataURL")
         username = str(request.form.get("Name"))
@@ -158,7 +158,7 @@ def login():
         if key != False:
             if Password_work.decrypt('dtfyuhgfcyhugfdxgyhty678yutre567uyhgtfrde456ytfdre54678iuygtfr56t78uijhgty67890poi8967tyuio876rtfghuio87y6t5rtyui8y76t54ertfyguhy76t54e3erdfghjui7y6t54eerdfghui87654ertfghui8y7654ersdfghjui876rtyghio98765rtyui87y6t5ertyuio8uy76t5rrefghuio8u7y', 'test', key, username, password) != "Blob":
                 session["password"] = password
-                if str(face_features(username)) == 'happy':
+                if str(face_features(username)) == 'sad':
                     return redirect("/passwords/")
                 else:
                     print('smile')
