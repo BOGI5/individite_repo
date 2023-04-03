@@ -56,10 +56,13 @@ def login():
                 if str(face_features(username)) == 'happy':
                     return redirect("/passwords/")
                 else:
+                    print('smile')
                     return render_template('login.html', data = "Please smile")
             else:
+                print('password')
                 return render_template('login.html', data = "Wrong password")
         else:
+            print('face')
             return render_template('login.html', data = "Face not recognized")
 
     return render_template('login.html', data = "")
