@@ -139,3 +139,35 @@ def logout():
 
 if __name__ == '__main__':
     app.run()
+
+
+@app.route('/login/', methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        takendataURL = request.form.get("dataURL")
+        username = str(request.form.get("Name"))
+        password = str(request.form.get("Password"))
+        get_image(takendataURL, username, r'/Verify_face/')
+        get_image(takendataURL, username, r'/Face_expressions/')
+        path_for_image = os.path.dirname(os.path.abspath(__file__))
+        path_for_image += r'/Face_images/' + username + '.png'
+        if not os.path.exists(path_for_image):
+            return render_template('login.html', data = "User does not exist")
+        session["username"] = username
+        key = check_image(username)
+        if key != False:
+            if Password_work.decrypt('dtfyuhgfcyhugfdxgyhty678yutre567uyhgtfrde456ytfdre54678iuygtfr56t78uijhgty67890poi8967tyuio876rtfghuio87y6t5rtyui8y76t54ertfyguhy76t54e3erdfghjui7y6t54eerdfghui87654ertfghui8y7654ersdfghjui876rtyghio98765rtyui87y6t5ertyuio8uy76t5rrefghuio8u7y', 'test', key, username, password) != "Blob":
+                session["password"] = password
+                if str(face_features(username)) == 'happy':
+                    return redirect("/passwords/")
+                else:
+                    print('smile')
+                    return render_template('login.html', data = "Please smile")
+            else:
+                print('password')
+                return render_template('login.html', data = "Wrong password")
+        else:
+            print('face')
+            return render_template('login.html', data = "Face not recognized")
+
+    return render_template('login.html', data = "")
