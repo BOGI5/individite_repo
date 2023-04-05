@@ -61,7 +61,7 @@ def login():
                 if str(face_features(username)) == 'happy':
                     session["username"] = username
                     session["password"] = password
-                    return redirect("/passwords/")
+                    return redirect("/login2/")
                 else:
                     print('smile')
                     return render_template('login.html', data = "Please smile")
@@ -133,14 +133,6 @@ def logout():
     return redirect("/")
 
 
-
-
-
-
-if __name__ == '__main__':
-    app.run()
-
-
 @app.route('/login2/', methods=["GET", "POST"])
 def login2():
     if request.method == "POST":
@@ -158,7 +150,8 @@ def login2():
         if key != False:
             if Password_work.decrypt('dtfyuhgfcyhugfdxgyhty678yutre567uyhgtfrde456ytfdre54678iuygtfr56t78uijhgty67890poi8967tyuio876rtfghuio87y6t5rtyui8y76t54ertfyguhy76t54e3erdfghjui7y6t54eerdfghui87654ertfghui8y7654ersdfghjui876rtyghio98765rtyui87y6t5ertyuio8uy76t5rrefghuio8u7y', 'test', key, username, password) != "Blob":
                 session["password"] = password
-                if str(face_features(username)) == 'sad':
+                print(face_features(username))
+                if str(face_features(username)) == 'disgust':
                     return redirect("/passwords/")
                 else:
                     print('smile')
@@ -171,3 +164,10 @@ def login2():
             return render_template('login.html', data = "Face not recognized")
 
     return render_template('login.html', data = "")
+
+
+
+if __name__ == '__main__':
+    app.run()
+
+
