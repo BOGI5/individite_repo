@@ -25,5 +25,5 @@ def face_features(username):
 
     # Delete the images
     os.remove(path_image)
-
+    print(str(emotion))
     return emotion
