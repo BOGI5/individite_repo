@@ -269,3 +269,13 @@ document.addEventListener('invalid', (function(){
       // myValidation();
     };
 })(), true);
+
+function gotoHome(){
+    location.href = "/";
+}
+function gotoLogin(){
+    location.href = "/login";
+}
+function gotoSignup(){
+    location.href = "/signup";
+}
