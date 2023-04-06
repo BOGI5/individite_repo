@@ -32,7 +32,7 @@ def check_image(username):
     key = keras.preprocessing.image.img_to_array(key, dtype='float32')
 
     # Delete the files
-    os.remove(path_img_1)
+   # os.remove(path_img_1)
 
     # If the faces are not the same person return False otherwise key
     return str(key) if result else False
