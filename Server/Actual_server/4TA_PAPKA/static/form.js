@@ -196,6 +196,20 @@ function logout(){
     location.href = "/logout";
 }
 
+function set_password(){
+    var generated_password = {};
+    generated_password.full_length = document.getElementsByClassName("VERY_IMPORTANT2").length;
+    generated_password.password = "";
+
+    for(var i = 0; i<generated_password.full_length; i++){
+        generated_password.password += document.getElementsByClassName("VERY_IMPORTANT2")[i].innerText;
+    }
+
+    navigator.clipboard.writeText(generated_password.password);
+    
+    location.href = "/passwords"
+}
+
 
 window.addEventListener('load', function () {
     
@@ -216,7 +230,6 @@ window.addEventListener('load', function () {
     }
 
     if(document.getElementById('site_url') != null){
-        document.getElementById('d0').style.display = "none";
         document.getElementById('c0').style.display = "none";
         
     }
