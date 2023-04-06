@@ -63,12 +63,13 @@ def login():
         if key != False:
             if Password_work.decrypt('dtfyuhgfcyhugfdxgyhty678yutre567uyhgtfrde456ytfdre54678iuygtfr56t78uijhgty67890poi8967tyuio876rtfghuio87y6t5rtyui8y76t54ertfyguhy76t54e3erdfghjui7y6t54eerdfghui87654ertfghui8y7654ersdfghjui876rtyghio98765rtyui87y6t5ertyuio8uy76t5rrefghuio8u7y', 'test', key, username, password) != "Blob":
                 if face_features(username, 'happy'):
-                    session["username"] = username
-                    session["password"] = password
-                    return redirect("/passwords/")
+                    session["tempusername"] = username
+                    session["temppassword"] = password
+                    print(redirect("/login2/"))
+                    return redirect("/login2/")
                 else:
-                    # print(face_features(username))
-                    return render_template('login.html', data="Please smile")
+                    #print(face_features(username))
+                    return render_template('login.html', data = "Please smile")
             else:
                 print('password')
                 return render_template('login.html', data="Wrong password")
@@ -140,6 +141,28 @@ def logout():
         return redirect("/")
     session.clear()
     return redirect("/")
+
+@app.route('/login2/', methods=["GET", "POST"])
+def login2():
+    if request.method == "POST":
+        takendataURL = request.form.get("dataURL")
+        username = session.get("tempusername")
+        password = session.get("temppassword")
+        get_image(takendataURL, username, r'/Verify_face/')
+        get_image(takendataURL, username, r'/Face_expressions/')
+        key = check_image(username)
+        if key != False:
+            if face_features(username, 'surprise'):
+                session["username"] = username
+                session["password"] = password
+                return redirect("/passwords/")
+            else:
+                #print(face_features(username))
+                return render_template('login2.html', data = "Please make a surprised face")
+        else:
+            print('face')
+            return render_template('login2.html', data = "Face not recognized")
+    return render_template('login2.html', data = "")
 
 
 if __name__ == '__main__':
