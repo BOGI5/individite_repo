@@ -63,7 +63,7 @@ def login():
                     session["password"] = password
                     return redirect("/passwords/")
                 else:
-                    print(face_features(username))
+                    #print(face_features(username))
                     return render_template('login.html', data = "Please smile")
             else:
                 print('password')
