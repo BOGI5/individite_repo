@@ -4,7 +4,7 @@ from tensorflow import keras
 from deepface.DeepFace import analyze
 
 
-def face_features(username, targetEmoton):
+def face_features(username, targetEmotion):
     """Function which identify facial emotion.
     :emotion(str): Facial emotion
     :img(numpy.ndarray): NumPy tensor representation of the image
@@ -24,9 +24,9 @@ def face_features(username, targetEmoton):
     emotion = features[0]['dominant_emotion']
 
     print(str(emotion))
-
-    # Delete the images
-    if(targetEmoton == emotion):
-        return True
     os.remove(path_image)
+    # Delete the images
+    if(targetEmotion == str(emotion)):
+        return True
+   
     return False
