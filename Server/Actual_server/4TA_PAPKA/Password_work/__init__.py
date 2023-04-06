@@ -26,8 +26,8 @@ def common_used_passwords(user, website, key, username, password_verify):
         return Test_password.common_used_passwords(str(decrypt(user, website, key, username, password_verify)))
     return False
 
-def generate_password(len, key_word=""):
-    return generate_password().generate_password(len, key_word)
+def GP(len, key_word=""):
+    return generate_password.generate_password(len, key_word)
 
 def delete_password(user, website, username):
     return password_delete.delete_password(user, website, username)

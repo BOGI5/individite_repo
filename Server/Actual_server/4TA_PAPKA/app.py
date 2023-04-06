@@ -108,7 +108,9 @@ def passwords():
             for website in json_file[username]:
                 new_json.append( { "website": website, "password": Password_work.decrypt(username, website, str(key), username, password) } )
             new_json = json.dumps(new_json)
-        return render_template('passwords.html', data = new_json)
+
+            generated_password = str(Password_work.GP(16))
+        return render_template('passwords.html', data = new_json, data2 = generated_password)
         
 
     return redirect("/passwords/")
