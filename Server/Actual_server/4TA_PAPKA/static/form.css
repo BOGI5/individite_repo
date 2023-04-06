@@ -203,3 +203,30 @@ h3{
 #c0{
     display: none;
 }
+
+#logout{
+    transition: 0.8s;
+    border: 2px solid black;
+    padding: 13px 13px;
+    color: rgb(230, 227, 227);
+    background-color: rgba(32, 44, 44, 1);
+    font-family: monospace;
+    font-weight : bold;
+    font-size: 15pt;
+    border-radius: 1cm;
+    height: 60px;
+    margin: 7.5px;
+    /*width: 245px;
+    height: 30px;
+    position: absolute;
+    left: 35%;
+    top: 15%;*/
+}
+
+#logout:hover{
+    background-color: rgb(189, 188, 188);
+    color: rgb(46, 45, 45);
+    font-family: monospace;
+    border-radius: 1cm;
+    cursor: pointer;
+}
