@@ -30,11 +30,13 @@ def signup():
         takendataURL = request.form.get("dataURL")
         username = str(request.form.get("Name"))
         password = str(request.form.get("Password"))
+        path_for_image = os.path.dirname(os.path.abspath(__file__))
+        path_for_image += r'/Face_images/' + username + '.png'
+        if os.path.exists(path_for_image):
+            return render_template('signup.html', message = "This username is already taken")
         session["username"] = username
         session["password"] = password
         get_image(takendataURL, username, r"/Face_images/")
-        path_for_image = os.path.dirname(os.path.abspath(__file__))
-        path_for_image += r'/Face_images/' + username + '.png'
         key = keras.preprocessing.image.load_img(path_for_image)
         key = keras.preprocessing.image.img_to_array(key, dtype='float32')
         Password_work.encrypt('dtfyuhgfcyhugfdxgyhty678yutre567uyhgtfrde456ytfdre54678iuygtfr56t78uijhgty67890poi8967tyuio876rtfghuio87y6t5rtyui8y76t54ertfyguhy76t54e3erdfghjui7y6t54eerdfghui87654ertfghui8y7654ersdfghjui876rtyghio98765rtyui87y6t5ertyuio8uy76t5rrefghuio8u7y', 'test', 'test', str(key), password, username)
@@ -112,7 +114,7 @@ def passwords():
             new_json = json.dumps(new_json)
 
             generated_password = str(Password_work.GP(16))
-        return render_template('passwords.html')
+        return render_template('passwords.html', data2 = generated_password, data = new_json)
         
 
     return redirect("/passwords/")
