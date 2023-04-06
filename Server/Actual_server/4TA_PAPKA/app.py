@@ -20,11 +20,13 @@ def make_session_timeout():
     session.permanent = True
     app.permanent_session_lifetime = timedelta(minutes=10)
 
+
 @app.route('/')
 def home():
     return render_template('homepage.html')
 
-@app.route('/signup/', methods =["GET", "POST"])
+
+@app.route('/signup/', methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
         takendataURL = request.form.get("dataURL")
@@ -33,7 +35,7 @@ def signup():
         path_for_image = os.path.dirname(os.path.abspath(__file__))
         path_for_image += r'/Face_images/' + username + '.png'
         if os.path.exists(path_for_image):
-            return render_template('signup.html', message = "This username is already taken")
+            return render_template('signup.html', message="This username is already taken")
         session["username"] = username
         session["password"] = password
         get_image(takendataURL, username, r"/Face_images/")
@@ -56,7 +58,7 @@ def login():
         path_for_image = os.path.dirname(os.path.abspath(__file__))
         path_for_image += r'/Face_images/' + username + '.png'
         if not os.path.exists(path_for_image):
-            return render_template('login.html', data = "User does not exist")
+            return render_template('login.html', data="User does not exist")
         key = check_image(username)
         if key != False:
             if Password_work.decrypt('dtfyuhgfcyhugfdxgyhty678yutre567uyhgtfrde456ytfdre54678iuygtfr56t78uijhgty67890poi8967tyuio876rtfghuio87y6t5rtyui8y76t54ertfyguhy76t54e3erdfghjui7y6t54eerdfghui87654ertfghui8y7654ersdfghjui876rtyghio98765rtyui87y6t5ertyuio8uy76t5rrefghuio8u7y', 'test', key, username, password) != "Blob":
@@ -65,16 +67,16 @@ def login():
                     session["password"] = password
                     return redirect("/passwords/")
                 else:
-                    #print(face_features(username))
-                    return render_template('login.html', data = "Please smile")
+                    # print(face_features(username))
+                    return render_template('login.html', data="Please smile")
             else:
                 print('password')
-                return render_template('login.html', data = "Wrong password")
+                return render_template('login.html', data="Wrong password")
         else:
             print('face')
-            return render_template('login.html', data = "Face not recognized")
+            return render_template('login.html', data="Face not recognized")
 
-    return render_template('login.html', data = "")
+    return render_template('login.html', data="")
 
 
 @app.route('/passwords/', methods=["GET", "POST"])
@@ -90,12 +92,15 @@ def passwords():
         path_for_image += r'/Face_images/' + username + '.png'
         key = keras.preprocessing.image.load_img(path_for_image)
         key = keras.preprocessing.image.img_to_array(key, dtype='float32')
-        Password_work.encrypt(username, password_to_encrypt, website, str(key), password, username)
+        Password_work.encrypt(username, password_to_encrypt,
+                              website, str(key), password, username)
     if request.method == "GET":
-        path_for_image_and_database = os.path.dirname(os.path.abspath(__file__))
+        path_for_image_and_database = os.path.dirname(
+            os.path.abspath(__file__))
         path_for_image_and_database += r'/Face_images/' + username + '.png'
         key = keras.preprocessing.image.load_img(path_for_image_and_database)
         key = keras.preprocessing.image.img_to_array(key, dtype='float32')
+        generated_password = str(Password_work.GP(16))
         # Go through all the passwords and decrypt them
         path_for_image_and_database = os.path.dirname(os.path.abspath(__file__))
         path_for_image_and_database += r'/Password_work/Database/new_database/' + username + '.json'
@@ -105,17 +110,17 @@ def passwords():
             try:
                 json_file[username]
             except KeyError:
-                return render_template('passwords.html')
+                return render_template('passwords.html', data2=generated_password)
             new_json = list()
             for website in json_file[username]:
-                new_json.append( { "website": website, "password": Password_work.decrypt(username, website, str(key), username, password) } )
+                new_json.append({"website": website, "password": Password_work.decrypt(
+                    username, website, str(key), username, password)})
             new_json = json.dumps(new_json)
 
-            generated_password = str(Password_work.GP(16))
-        return render_template('passwords.html', data2 = generated_password, data = new_json)
-        
+        return render_template('passwords.html', data2=generated_password, data=new_json)
 
     return redirect("/passwords/")
+
 
 @app.route('/delete/', methods=["GET", "POST"])
 def delete():
@@ -137,9 +142,5 @@ def logout():
     return redirect("/")
 
 
-
-
 if __name__ == '__main__':
     app.run()
-
-
