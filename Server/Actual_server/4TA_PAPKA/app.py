@@ -144,6 +144,8 @@ def logout():
 
 @app.route('/login2/', methods=["GET", "POST"])
 def login2():
+    if not session.get("tempusername"):
+        return redirect("/login/")
     if request.method == "POST":
         takendataURL = request.form.get("dataURL")
         username = session.get("tempusername")
