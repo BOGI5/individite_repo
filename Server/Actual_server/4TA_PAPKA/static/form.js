@@ -234,6 +234,10 @@ window.addEventListener('load', function () {
         
     }
 
+    if(document.title = "Log in (2)"){
+        autofill();
+    }
+
     call_funcs();
 });
 
@@ -279,3 +283,9 @@ function gotoLogin(){
 function gotoSignup(){
     location.href = "/signup";
 }
+
+/*function autofill(){
+    document.getElementById('Name').value = "test";
+    console.log(document.getElementById('Name').value);
+    document.getElementById('Password').value = "test";
+}*/
