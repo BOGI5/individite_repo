@@ -238,10 +238,6 @@ window.addEventListener('load', function () {
         autofill();
     }
 
-    if(document.title = "Log in (2)"){
-        autofill();
-    }
-
     call_funcs();
 });
 
