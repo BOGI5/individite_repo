@@ -105,14 +105,19 @@ function add_after(name_string, password_string){
     const site_password_text = document.createTextNode(password_string);
     const delete_text = document.createTextNode("Delete");
     const copy_text = document.createTextNode("Copy");
+    const test_passowrd = document.createTextNode("Test");
     const site_name = document.createElement("p");
     const site_password = document.createElement("p");
     const delete_button = document.createElement("button");
     const copy_button = document.createElement("button");
+    const test_button = document.createElement("button");
     delete_button.classList.add('delete_pass');
     delete_button.appendChild(delete_text);
     copy_button.appendChild(copy_text);
     copy_button.classList.add('copy_pass');
+    test_button.appendChild(test_passowrd);
+    test_button.classList.add('delete_pass');
+    test_button.setAttribute("onclick", `test_password('${name_string}')`);
     copy_button.setAttribute("onclick", `copyToClipboard(${num})`);
     delete_button.setAttribute("onclick", `delete_password('${name_string}')`);
     site_name.classList.add('site_name');
@@ -123,6 +128,7 @@ function add_after(name_string, password_string){
     const password = document.getElementById('password');
     const delete_but = document.getElementById('delete');
     const copy = document.getElementById('copy');
+    const test = document.getElementById('test');
     level += 75;
     site_password.id = num;
     num += 1;
@@ -130,10 +136,13 @@ function add_after(name_string, password_string){
     site_password.style.top = level;
     delete_button.style.top = level;
     copy_button.style.top = level;
+    test_button.style.top = level;
+    test_button.style.left = 1000;
     name.appendChild(site_name);
     password.appendChild(site_password);
     delete_but.appendChild(delete_button);
     copy.appendChild(copy_button);
+    test.appendChild(test_button);
 }
 
 function copyToClipboard(id){
@@ -147,6 +156,9 @@ function delete_password(web){
 
 }
 
+function test_password(web){
+    location.href = "/test/?test=" + web;
+}
 
 function cancel_password(){
     document.getElementById('add_pass').style.display = "block";
@@ -211,6 +223,38 @@ function set_password(){
 }
 
 
+function display_level(){
+    var length = document.getElementsByClassName("VERY_IMPORTANT3").length;
+    var level = "";
+    for(var i = 0; i<length; i++){
+        level += document.getElementsByClassName("VERY_IMPORTANT3")[i].innerText;
+    }
+    
+    if(level == "{}" || level == "None"){
+        return 0;
+    }
+
+    
+    var level_object = JSON.parse(level);
+
+    var common_text = "";
+    if(level_object.IsCommon === "True"){
+        common_text = "Your password is very commonly used";
+    }
+    else{
+        common_text = "Your password is not that commonly used";
+    }
+
+    document.getElementsByClassName("notification")[0].style.display = "flex";
+    document.getElementById("N_T_1").innerText = "1: Your password is " + level_object.Level;
+    document.getElementById("N_T_2").innerText = "2: " + common_text;
+}
+
+function notification_button(){
+    location.href = "/test/";
+}
+
+
 window.addEventListener('load', function () {
     
     if(document.getElementById('Name') != null){
@@ -233,6 +277,8 @@ window.addEventListener('load', function () {
         document.getElementById('c0').style.display = "none";
         
     }
+
+    display_level();
 
     if(document.title = "Log in (2)"){
         autofill();

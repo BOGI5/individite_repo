@@ -34,7 +34,7 @@ def common_used_passwords(password):
     path = os.path.dirname(os.path.abspath(__file__))
     path += '/passwords.txt'
     with open(path , 'r') as file:
-        for line in file:
+        for line in file.readlines():
             if password == line.strip():
                 return True
         return False

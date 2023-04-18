@@ -18,7 +18,7 @@ Session(app)
 @app.before_first_request
 def make_session_timeout():
     session.permanent = True
-    app.permanent_session_lifetime = timedelta(minutes=10)
+    app.permanent_session_lifetime = timedelta(minutes=1000)
 
 
 @app.route('/')
@@ -95,6 +95,7 @@ def passwords():
         key = keras.preprocessing.image.img_to_array(key, dtype='float32')
         Password_work.encrypt(username, password_to_encrypt,
                               website, str(key), password, username)
+        session["TestPassword"] = {}
     if request.method == "GET":
         path_for_image_and_database = os.path.dirname(
             os.path.abspath(__file__))
@@ -111,14 +112,14 @@ def passwords():
             try:
                 json_file[username]
             except KeyError:
-                return render_template('passwords.html', data2=generated_password)
+                return render_template('passwords.html', data2=generated_password, level=str(session.get("TestPassword")).replace("'", '~').replace('"', "'").replace('~', '"'))
             new_json = list()
             for website in json_file[username]:
                 new_json.append({"website": website, "password": Password_work.decrypt(
                     username, website, str(key), username, password)})
             new_json = json.dumps(new_json)
 
-        return render_template('passwords.html', data2=generated_password, data=new_json)
+        return render_template('passwords.html', data2=generated_password, data=new_json, level=str(session.get("TestPassword")).replace("'", '~').replace('"', "'").replace('~', '"'))
 
     return redirect("/passwords/")
 
@@ -128,7 +129,10 @@ def delete():
     if not session.get("username"):
         return redirect("/")
     if request.method == "GET":
-        website = request.args.get('del')
+        try:
+            website = request.args.get('del')
+        except:
+            website = False
         username = session.get("username")
         if website:
             Password_work.delete_password(username, website, username)
@@ -165,6 +169,39 @@ def login2():
             print('face')
             return render_template('login2.html', data = "Face not recognized")
     return render_template('login2.html', data = "")
+
+
+@app.route('/test/', methods=["GET", "POST"])
+def test_pass():
+    if not session.get("username") and not session.get("TestPassword"):
+        return redirect("/")
+    if request.method == "GET":
+        Test_password = session.get("TestPassword")
+        try:
+            website = request.args.get('test')
+        except:
+            website = False
+        if website:
+            username = session.get("username")
+            password = session.get("password")
+            path_for_image = os.path.dirname(os.path.abspath(__file__))
+            path_for_image += r'/Face_images/' + username + '.png'
+            key = keras.preprocessing.image.load_img(path_for_image)
+            key = keras.preprocessing.image.img_to_array(key, dtype='float32')
+            if Password_work.decrypt(username, website, str(key), username, password) != False:
+                Test_password.update({"Level":Password_work.check_password(username, website, str(key), username, password)})
+                Test_password.update({"IsCommon":str(Password_work.common_used_passwords(username, website, str(key), username, password))})
+                session["TestPassword"] = Test_password
+                return redirect("/passwords/")
+            else:
+                Test_password.clear()
+                session["TestPassword"] = Test_password
+                return redirect("/passwords/")
+        else:
+            Test_password.clear()
+            session["TestPassword"] = Test_password
+            return redirect("/passwords/")
+    return redirect("/passwords/")
 
 
 if __name__ == '__main__':
