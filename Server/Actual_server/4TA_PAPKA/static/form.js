@@ -280,11 +280,11 @@ window.addEventListener('load', function () {
 
     display_level();
 
+    call_funcs();
+
     if(document.title = "Log in (2)"){
         autofill();
     }
-
-    call_funcs();
 });
 
 
