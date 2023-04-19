@@ -95,7 +95,7 @@ def passwords():
         key = keras.preprocessing.image.img_to_array(key, dtype='float32')
         Password_work.encrypt(username, password_to_encrypt,
                               website, str(key), password, username)
-        session["TestPassword"] = {}
+        # session["TestPassword"] = {}
     if request.method == "GET":
         path_for_image_and_database = os.path.dirname(
             os.path.abspath(__file__))
@@ -118,6 +118,9 @@ def passwords():
                 new_json.append({"website": website, "password": Password_work.decrypt(
                     username, website, str(key), username, password)})
             new_json = json.dumps(new_json)
+
+            if not session.get("TestPassword"):
+                session["TestPassword"] = {}
 
         return render_template('passwords.html', data2=generated_password, data=new_json, level=str(session.get("TestPassword")).replace("'", '~').replace('"', "'").replace('~', '"'))
 
