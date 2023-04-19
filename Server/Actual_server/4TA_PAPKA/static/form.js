@@ -134,8 +134,8 @@ function add_after(name_string, password_string){
     num += 1;
     site_name.style.top = level;
     site_password.style.top = level;
-    delete_button.style.top = level;
-    copy_button.style.top = level;
+    delete_button.style.top = level-4;
+    copy_button.style.top = level-4;
     test_button.style.top = level;
     test_button.style.left = 1000;
     name.appendChild(site_name);
