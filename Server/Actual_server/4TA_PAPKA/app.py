@@ -162,6 +162,8 @@ def login2():
         key = check_image(username)
         if key != False:
             if face_features(username, 'surprise'):
+                del session["tempusername"]
+                del session["temppassword"]
                 session["username"] = username
                 session["password"] = password
                 return redirect("/passwords/")
