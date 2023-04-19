@@ -94,6 +94,11 @@ function read_passwords(){
     for(var i = 0; i<passwords.length; i++){
         add_after(passwords[i].website, passwords[i].password)
     }
+    /*if(document.getElementById('N_T_1').innerText){
+        alert(document.getElementById('N_T_1').innerText + "\n" + document.getElementById('N_T_2').innerText);
+        document.getElementById('N_T_1').innerText = null;
+        document.getElementById('N_T_2').innerText = null;
+    }*/
 }
 
 
@@ -245,9 +250,9 @@ function display_level(){
         common_text = "Your password is not that commonly used";
     }
 
-    document.getElementsByClassName("notification")[0].style.display = "flex";
-    document.getElementById("N_T_1").innerText = "1: Your password is " + level_object.Level;
-    document.getElementById("N_T_2").innerText = "2: " + common_text;
+    //document.getElementsByClassName("notification")[0].style.display = "flex";
+    document.getElementById("N_T_1").innerText = "Your password is " + level_object.Level;
+    document.getElementById("N_T_2").innerText = common_text;
 }
 
 function notification_button(){
@@ -334,4 +339,12 @@ function gotoSignup(){
     document.getElementById('Name').value = "test";
     console.log(document.getElementById('Name').value);
     document.getElementById('Password').value = "test";
+}*/
+
+/*window.onload = function(){
+    if(document.getElementById('N_T_1').innerText){
+        alert(document.getElementById('N_T_1').innerText + "\n" + document.getElementById('N_T_2').innerText);
+        document.getElementById('N_T_1').innerText = null;
+        document.getElementById('N_T_2').innerText = null;
+    }
 }*/
