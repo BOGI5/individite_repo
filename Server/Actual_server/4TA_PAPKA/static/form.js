@@ -96,7 +96,7 @@ function read_passwords(){
     }
     if(document.getElementById('N_T_1').innerText){
         alert(document.getElementById('N_T_1').innerText + "\n" + document.getElementById('N_T_2').innerText);
-        document.getElementById('N_B_1').form.submit();
+        location.href = '/test/'
     }
 }
 
