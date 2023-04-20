@@ -94,11 +94,10 @@ function read_passwords(){
     for(var i = 0; i<passwords.length; i++){
         add_after(passwords[i].website, passwords[i].password)
     }
-    /*if(document.getElementById('N_T_1').innerText){
+    if(document.getElementById('N_T_1').innerText){
         alert(document.getElementById('N_T_1').innerText + "\n" + document.getElementById('N_T_2').innerText);
-        document.getElementById('N_T_1').innerText = null;
-        document.getElementById('N_T_2').innerText = null;
-    }*/
+        document.getElementById('N_B_1').form.submit();
+    }
 }
 
 
